@@ -3,24 +3,29 @@ import { Reveal } from "@/components/Reveal";
 import { home } from "@/content/frank/home";
 import { Chip } from "./Chip";
 import { FrankAvatar } from "./FrankAvatar";
-import { ArrowRight, Calendar, Check, Mail, Message } from "./Icons";
+import { ArrowRight, Calendar, Check, Mail } from "./Icons";
 import { SectionHeading, Section } from "./SectionHeading";
-import { MagnifierChart } from "./Stipple";
+import { Avatar } from "./Mocks";
+import { FlowaO } from "./Sphere";
 
 type Key = (typeof home.useCases.items)[number]["key"];
 
-/** The apricot illustration panel on each use-case card: a mini UI collage with Frank's avatar. */
+/** The illustration panel on each use-case card: a mini UI collage with Frank's avatar. */
 function Art({ k }: { k: Key }) {
   const frank = <FrankAvatar decorative round className="absolute bottom-3 left-3 h-12 w-12 border-2 border-white" />;
   const mini = "rounded-[12px] bg-white p-3 shadow-float text-ink";
   if (k === "signal")
     return (
       <>
-        <MagnifierChart className="absolute -right-2 bottom-0 h-[62%] w-auto" />
-        <div className={`${mini} absolute left-4 top-4 w-[60%]`}>
+        <div className={`${mini} absolute left-4 top-4 w-[66%]`}>
           <Chip>New signal</Chip>
-          <p className="mt-2 text-[13px] font-semibold">Hiring 2 SDRs</p>
-          <p className="text-[11px] text-muted">Brightline Software · 4h ago</p>
+          <div className="mt-2 flex items-center gap-2">
+            <Avatar name="Oliver Hart" size={30} status="live" />
+            <div className="min-w-0">
+              <p className="truncate text-[13px] font-semibold">Hiring 2 SDRs</p>
+              <p className="truncate text-[11px] text-muted">Brightline Software · 4h ago</p>
+            </div>
+          </div>
         </div>
         {frank}
       </>
@@ -54,12 +59,15 @@ function Art({ k }: { k: Key }) {
       <>
         <div className={`${mini} absolute left-4 right-6 top-5`}>
           <div className="flex items-center gap-2">
-            <span className="grid h-7 w-7 place-items-center rounded-full bg-panel">
-              <Message size={14} />
-            </span>
+            <Avatar name="Priya Nair" size={28} />
             <p className="text-[12px] font-semibold">Connection note · Priya Nair</p>
           </div>
           <p className="mt-2 text-[12px] leading-relaxed text-ink-2">Hi Priya, saw Northgate just appointed a new sales lead. Happy to connect, no pitch.</p>
+        </div>
+        <div className="absolute bottom-4 right-4">
+          <Chip>
+            <Check size={13} /> Approved by a person
+          </Chip>
         </div>
         {frank}
       </>
@@ -139,7 +147,9 @@ function Art({ k }: { k: Key }) {
   );
 }
 
-/** Use cases (brief §4.5): six cards, 3×2, each with an apricot illustration panel, an H3 and two lines of body. */
+const TINT = { signal: 1, email: 2, linkedin: 5, accounts: 3, noshow: 1, crm: 2 } as const;
+
+/** Use cases (brief §4.5): six cards, 3×2, each with a soft grey illustration panel, a Flowa "o" and coloured UI cards on top, an H3 and two lines of body. */
 export function UseCases() {
   const u = home.useCases;
   return (
@@ -149,7 +159,8 @@ export function UseCases() {
         <Reveal stagger as="ul" className="mt-12 grid gap-6 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
           {u.items.map((item) => (
             <li key={item.key} className="flex min-w-0 flex-col">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-panel" aria-hidden="true">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-card border border-line bg-soft transition-transform duration-300 ease-out hover:-translate-y-1" aria-hidden="true">
+                <FlowaO tint={TINT[item.key]} className="absolute -right-8 -top-10 h-40 w-40 rotate-12 opacity-80" />
                 <Art k={item.key} />
               </div>
               <h3 className="mt-5 text-h3 text-ink">{item.title}</h3>

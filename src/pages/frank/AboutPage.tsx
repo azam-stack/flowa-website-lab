@@ -13,8 +13,7 @@ const PHOTO: Record<string, string> = { Ahmed: "ahmed", Anton: "anton" };
 
 /**
  * /about: "The people behind Frank". The portraits are the founders' own
- * photos already published on the live site; [CONFIRM] Founder photos
- * covers whether to keep them for the new design.
+ * photos, already published on the live site.
  */
 export function AboutPage() {
   useSeo({ title: t.seo.title, description: t.seo.description, path: "/about", jsonLd: [breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "About", path: "/about" }])] });
@@ -28,11 +27,11 @@ export function AboutPage() {
               const slug = PHOTO[p.name];
               return (
                 <li key={p.name} className="framed grid gap-6 p-5 sm:grid-cols-[180px_1fr] md:p-7">
-                  <div className="stipple-bottom aspect-[4/5] overflow-hidden rounded-card">
+                  <div className="aspect-[4/5] overflow-hidden rounded-card bg-panel">
                     <picture>
                       <source srcSet={asset(`images/team/${slug}.avif`)} type="image/avif" />
                       <source srcSet={asset(`images/team/${slug}.webp`)} type="image/webp" />
-                      <img src={asset(`images/team/${slug}.jpg`)} alt={`${p.name}, ${p.role} of FLOWA`} loading="lazy" width={600} height={750} className="relative z-[1] h-full w-full object-cover grayscale" />
+                      <img src={asset(`images/team/${slug}.jpg`)} alt={`${p.name}, ${p.role} of Flowa`} loading="lazy" width={600} height={750} className="relative z-[1] h-full w-full object-cover grayscale" />
                     </picture>
                   </div>
                   <div>
@@ -53,10 +52,9 @@ export function AboutPage() {
               );
             })}
           </Reveal>
-          <p className="mt-4 text-small text-muted">{t.photosNote}</p>
 
           <Reveal delay={80} className="relative mt-12 md:mt-16">
-            <Sphere size={64} tint={3} smiley className="absolute -right-3 -top-8 hidden md:block" />
+            <Sphere size={72} tint={1} mark className="absolute -right-3 -top-8 hidden md:block" rotate={14} />
             <figure className="framed px-7 py-10 md:px-12 md:py-14">
               <blockquote className="max-w-3xl text-[24px] font-light leading-snug text-ink md:text-[30px]">“{t.quote}”</blockquote>
               <figcaption className="mt-6 text-[15px] text-ink-2">

@@ -35,7 +35,7 @@ function StepIndicator({ step }: { step: Step }) {
             {i > 0 && <span className="text-muted" aria-hidden="true">›</span>}
             <span className={`flex items-center gap-1.5 ${current ? "font-semibold text-ink" : done ? "text-ink" : "text-muted"}`}>
               {done && (
-                <span className="grid h-4 w-4 place-items-center rounded-full bg-ink text-white">
+                <span className="check-pop grid h-4 w-4 place-items-center rounded-full bg-ink text-white">
                   <Check size={10} />
                 </span>
               )}
@@ -58,7 +58,7 @@ function Tiles({ name, options, value, onPick }: { name: string; options: readon
       {options.map((o) => {
         const selected = value === o;
         return (
-          <button key={o} type="button" role="radio" aria-checked={selected} onClick={() => onPick(o)} className={`min-h-[56px] rounded-control border border-ink px-3 py-3 text-center text-[15px] font-medium leading-snug transition-colors md:min-h-[100px] ${selected ? "bg-brand text-ink" : "bg-white text-ink hover:bg-soft"}`}>
+          <button key={o} type="button" role="radio" aria-checked={selected} onClick={() => onPick(o)} className={`press min-h-[56px] rounded-control border border-ink px-3 py-3 text-center text-[15px] font-medium leading-snug transition-[background-color,transform,box-shadow] duration-150 md:min-h-[100px] ${selected ? "bg-panel text-ink shadow-[inset_0_0_0_1px_#0C0C0B]" : "bg-white text-ink hover:-translate-y-0.5 hover:bg-soft"}`}>
             {o}
           </button>
         );
@@ -175,7 +175,7 @@ export function PricingQuiz() {
       </h2>
 
       {step === 1 && (
-        <div className="fade-in mt-5">
+        <div className="swap-in mt-5">
           <Tiles name={t.steps.company.question} options={COMPANY_TYPES} value={companyType} onPick={(v) => pickTile(1, v)} />
           <div className="mt-5 flex justify-end">
             <Btn disabled={!companyType} onClick={() => advanceFrom(1)}>
@@ -186,7 +186,7 @@ export function PricingQuiz() {
       )}
 
       {step === 2 && (
-        <div className="fade-in mt-5">
+        <div className="swap-in mt-5">
           <Tiles name={t.steps.team.question} options={TEAM_SIZES} value={teamSize} onPick={(v) => pickTile(2, v)} />
           <div className="mt-5 flex justify-between gap-3">
             <Btn variant="outline" onClick={() => setStep(1)}>
@@ -200,7 +200,7 @@ export function PricingQuiz() {
       )}
 
       {step === 3 && (
-        <div className="fade-in mt-5">
+        <div className="swap-in mt-5">
           <p className="text-[14px] text-muted" id={`${id}-goals-hint`}>
             {t.steps.goals.hint}
           </p>
@@ -208,7 +208,7 @@ export function PricingQuiz() {
             {GOALS.map((g) => {
               const checked = goals.includes(g);
               return (
-                <label key={g} className={`flex min-h-[52px] cursor-pointer items-center gap-3 rounded-control border px-4 py-3 text-[15px] font-medium transition-colors ${checked ? "border-ink bg-brand text-ink" : "border-ink bg-white text-ink hover:bg-soft"}`}>
+                <label key={g} className={`flex min-h-[52px] cursor-pointer items-center gap-3 rounded-control border px-4 py-3 text-[15px] font-medium transition-colors ${checked ? "border-ink bg-panel text-ink" : "border-ink bg-white text-ink hover:bg-soft"}`}>
                   <input type="checkbox" className="checkbox" checked={checked} onChange={() => toggleGoal(g)} />
                   {g}
                 </label>
@@ -228,7 +228,7 @@ export function PricingQuiz() {
 
       {step === 4 && (
         <form
-          className="fade-in mt-5"
+          className="swap-in mt-5"
           noValidate
           onSubmit={(e) => {
             e.preventDefault();
@@ -295,7 +295,8 @@ export function PricingQuiz() {
 export function PricingCard() {
   return (
     <div id="quote" className="framed grid overflow-hidden lg:grid-cols-2">
-      <div className="stipple-corner relative px-6 py-10 md:px-12 md:py-14">
+      <div className="relative overflow-hidden px-6 py-10 md:px-12 md:py-14">
+        <Sphere size={220} tint={1} outline className="pointer-events-none absolute -bottom-20 -left-16 opacity-[0.07]" bob={false} rotate={-18} />
         <h1 className="text-h1 text-ink">
           {t.left.h1Light}
           <span className="font-semibold">{t.left.h1Bold}</span>
@@ -311,16 +312,16 @@ export function PricingCard() {
         </ul>
         <div className="relative mt-12 flex items-center gap-4 lg:mt-24">
           <div className="flex -space-x-2" aria-hidden="true">
-            <Sphere size={34} tint={6} smiley bob={false} className="border border-ink/10" />
-            <Sphere size={34} tint={3} smiley bob={false} />
-            <Sphere size={34} tint={1} bob={false} />
+            <Sphere size={34} tint={4} mark bob={false} rotate={-10} />
+            <Sphere size={34} tint={2} bob={false} rotate={14} />
+            <Sphere size={34} tint={1} mark bob={false} rotate={-4} />
           </div>
           <p className="text-[17px] font-semibold text-ink">{t.left.badge}</p>
         </div>
       </div>
-      <div className="bg-panel px-5 py-8 md:px-10 md:py-12 lg:border-l lg:border-ink">
+      <div className="bg-soft px-5 py-8 md:px-10 md:py-12 lg:border-l lg:border-ink">
         <p className="text-[15px] font-medium text-ink">{t.right.heading}</p>
-        <div className="mt-4 rounded-card bg-white p-5 md:p-7">
+        <div className="mt-4 rounded-card bg-white p-5 shadow-lift md:p-7">
           <PricingQuiz />
         </div>
       </div>

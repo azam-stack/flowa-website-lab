@@ -8,29 +8,43 @@
 import { home } from "./home";
 
 export const frankPage = {
-  seo: { title: "Frank, your AI outbound agent | Frank by FLOWA", description: "Meet Frank. He finds companies with a reason to buy now, reaches decision-makers on email and LinkedIn and books qualified meetings into your calendar." },
-  h1Light: "Meet Frank, ",
-  h1Bold: "your AI outbound agent",
-  sub: "He reads your market every day, writes to the right person for a real reason, and puts qualified meetings in your calendar.",
+  seo: { title: "Frank, your AI outbound agent | Frank by Flowa", description: "Meet Frank. He finds companies with a reason to buy now, drafts the first message for a person to approve, then follows up and books the meeting." },
+  h1Light: "Meet ",
+  h1Bold: "Frank.",
+  sub: "Your AI outbound agent. He reads your market every day, drafts the first message for a real reason, and books the meeting once a person has approved it.",
+  video: "See Frank in action",
+  hotLeads: {
+    title: "Hot leads today",
+    rows: [
+      { name: "Hannah Lee", role: "VP Sales · Brightline Software", why: "Series A, hiring SDRs" },
+      { name: "Arjun Mehta", role: "Head of Sales · Northgate IT", why: "New in role" },
+      { name: "Sofie Madsen", role: "COO · Example SaaS", why: "Opening UK office" },
+      { name: "David Brooks", role: "Founder · Kestrel Cloud", why: "Posted: pipeline is thin" },
+    ],
+    chip: "Hot",
+  },
   stripEyebrow: "How Frank works",
   stripH2: "Four steps, every week",
+  statsEyebrow: "Measured in meetings",
+  statsH2: "Our own numbers, not promises",
+  faqH2: "Questions about Frank",
 } as const;
 
 export const howItWorks = {
-  seo: { title: "How Frank works | Frank by FLOWA", description: "Target, reach, qualify, book. The four steps Frank runs every week to turn buying signals into qualified meetings." },
+  seo: { title: "How Frank works | Frank by Flowa", description: "Target, spot, reach, book. The four steps Frank runs every week to turn buying signals into qualified meetings." },
   h1Light: "How ",
   h1Bold: "Frank works",
   sub: "Four steps, from your ideal customer to a meeting in your calendar.",
   steps: [
-    { n: "01", title: "Target", body: "We agree your ideal customer, the roles worth talking to and what counts as a qualified meeting.", mock: "target" as const },
-    { n: "02", title: "Reach", body: "Frank starts the conversations on email and LinkedIn, researched and personalised.", mock: "reach" as const },
-    { n: "03", title: "Qualify", body: "Frank separates genuine interest from a polite yes, against the criteria we wrote down together.", mock: "qualify" as const },
-    { n: "04", title: "Book", body: "Qualified meetings go straight into your calendar, with the context you need before you join.", mock: "book" as const },
+    { n: "01", title: "Target", headline: "Agree who is worth meeting", body: "We agree your ideal customer, the roles worth talking to and what counts as a qualified meeting.", mock: "target" as const },
+    { n: "02", title: "Spot", headline: "Find a real reason to talk", body: "Frank scans daily for buying signals that match that profile and checks every lead against it.", mock: "qualify" as const },
+    { n: "03", title: "Reach", headline: "Frank drafts. A person approves.", body: "Frank drafts a personal first message. We approve it and send it on LinkedIn or email.", mock: "reach" as const },
+    { n: "04", title: "Book", headline: "Meetings land in your calendar", body: "Replies are qualified and meetings go straight into your calendar, with the context you need before you join.", mock: "book" as const },
   ],
 } as const;
 
 export const signals = {
-  seo: { title: "Signals Frank watches | Frank by FLOWA", description: "What Frank watches: job posts, leadership changes, expansion moves and founder posts. How a signal becomes a verified, scored, briefed lead." },
+  seo: { title: "Signals Frank watches | Frank by Flowa", description: "What Frank watches: job posts, leadership changes, expansion moves and founder posts. How a signal becomes a verified, scored, briefed lead." },
   h1Light: "What ",
   h1Bold: "Frank watches",
   sub: "Static lists tell you who a company is. Frank looks for the reason to talk now.",
@@ -73,7 +87,7 @@ export const signals = {
 } as const;
 
 export const channelEmail = {
-  seo: { title: "Frank on email | Frank by FLOWA", description: "Frank on email: verified data, domain setup and deliverability handled, short sequences with a reason to reply, and every reply handled." },
+  seo: { title: "Frank on email | Frank by Flowa", description: "Frank on email: verified data, domain setup and deliverability handled, short sequences with a reason to reply, and every reply handled." },
   h1Light: "Frank on ",
   h1Bold: "email",
   sub: "Verified data, deliverability handled, and a reason to reply in the first line.",
@@ -86,20 +100,20 @@ export const channelEmail = {
 } as const;
 
 export const channelLinkedIn = {
-  seo: { title: "Frank on LinkedIn | Frank by FLOWA", description: "Frank on LinkedIn: one-to-one connection notes and messages to decision-makers, and named target accounts worked by hand." },
+  seo: { title: "Frank on LinkedIn | Frank by Flowa", description: "Frank on LinkedIn: one-to-one connection notes and messages to decision-makers, and named target accounts worked by hand." },
   h1Light: "Frank on ",
   h1Bold: "LinkedIn",
   sub: "Where decision-makers already are, with a note written for one person.",
   blocks: [
     { title: "One-to-one connection notes", body: "A connection request to a named person who fits the agreed ideal customer profile, never a bulk send to a scraped list." },
-    { title: "Messages written for one person", body: "Every message opens on a real fact about the company, so it reads like it was written for them, because it was." },
+    { title: "Messages written for one person", body: "Every message opens on a real fact about the company and is approved by a person before it is sent." },
     { title: "Named accounts", body: "Give Frank the companies you want. He finds the people and opens the door." },
     { title: "Permanent opt-outs", body: "Anyone who asks not to hear from us is suppressed across every campaign, for good." },
   ],
 } as const;
 
 export const casesPage = {
-  seo: { title: "Cases | Frank by FLOWA", description: "Meetings Frank has created. Documented, not dramatised. Case studies appear here once a client has approved what we can say." },
+  seo: { title: "Cases | Frank by Flowa", description: "Meetings Frank has created. Documented, not dramatised. Case studies appear here once a client has approved what we can say." },
   h1Light: "Meetings Frank has created. ",
   h1Bold: "Documented, not dramatised.",
   sub: "Every case follows the same six parts, and nothing is published until the client has approved it.",
@@ -111,25 +125,23 @@ export const casesPage = {
     { n: "03", title: "The target", body: "The ideal customer profile and the signals we agreed to watch." },
     { n: "04", title: "The work", body: "Channels, cadence and how qualification was defined." },
     { n: "05", title: "The result", body: "Meetings booked and what they turned into, in the client's own numbers." },
-    { n: "06", title: "In their words", body: "A quote the client has approved. [CONFIRM: approved client quote]" },
+    { n: "06", title: "In their words", body: "A quote the client has approved." },
   ],
-  /** [CONFIRM] No client-approved case exists yet; the list renders empty rather than inventing one. */
-  emptyNote: "The first published cases will appear here once clients have approved them. [CONFIRM: approved client case]",
+  /** No client-approved case exists yet; the list renders empty rather than inventing one. */
+  emptyNote: "The first published cases will appear here once clients have approved them.",
   contactH2: "Want to be the next case?",
   contactSub: "Tell us who you sell to. Ahmed or Anton will reply within one working day.",
 } as const;
 
 export const aboutPage = {
-  seo: { title: "About us | Frank by FLOWA", description: "The people behind Frank: Ahmed and Anton, FLOWA's co-founders, who set up and oversee every campaign." },
+  seo: { title: "About us | Frank by Flowa", description: "The people behind Frank: Ahmed and Anton, Flowa's co-founders, who set up and oversee every campaign." },
   h1Light: "The people ",
   h1Bold: "behind Frank",
-  sub: "Frank is built and operated by FLOWA. Two co-founders set up and oversee every client's campaign.",
+  sub: "Frank is built and operated by Flowa. Two co-founders set up and oversee every client's campaign.",
   people: [
     { name: "Ahmed", role: "Co-founder", owns: ["Market research and targeting", "Outreach copy", "Reporting"] },
     { name: "Anton", role: "Co-founder", owns: ["Campaign strategy", "LinkedIn and conversations", "Booking and follow-up"] },
   ],
-  /** [CONFIRM] Founder photos. Until supplied, the cards show initials, not a stock image. */
-  photosNote: "[CONFIRM] Founder photos",
   quote: home.proof.quote,
   quoteName: home.proof.quoteName,
   quoteRole: home.proof.quoteRole,
@@ -138,12 +150,12 @@ export const aboutPage = {
 
 export const contactPage = {
   demo: {
-    seo: { title: "Book a demo | Frank by FLOWA", description: "See how Frank can build your pipeline, qualify replies and book the meetings your team wants." },
+    seo: { title: "Book a demo | Frank by Flowa", description: "See how Frank can build your pipeline, qualify replies and book the meetings your team wants." },
     h1Light: "Book a ",
     h1Bold: "demo",
   },
   contact: {
-    seo: { title: "Contact | Frank by FLOWA", description: "Talk to Ahmed or Anton. Tell us who you sell to and we will reply within one working day." },
+    seo: { title: "Contact | Frank by Flowa", description: "Talk to Ahmed or Anton. Tell us who you sell to and we will reply within one working day." },
     h1Light: "Get in ",
     h1Bold: "touch",
   },
@@ -151,7 +163,7 @@ export const contactPage = {
 } as const;
 
 export const faqPage = {
-  seo: { title: "FAQ | Frank by FLOWA", description: "Straight answers about Frank, qualified meetings, pricing, data ownership and getting started." },
+  seo: { title: "FAQ | Frank by Flowa", description: "Straight answers about Frank, qualified meetings, pricing, data ownership and getting started." },
   h1Light: "Frequently asked ",
   h1Bold: "questions",
   generalHeading: "About Frank",
@@ -159,7 +171,7 @@ export const faqPage = {
 } as const;
 
 export const notFound = {
-  seo: { title: "Page not found | Frank by FLOWA", description: "That page does not exist." },
+  seo: { title: "Page not found | Frank by Flowa", description: "That page does not exist." },
   h1: "Frank could not find that page.",
   body: "The link may be out of date. Try the homepage, or ask Frank below.",
   cta: "Back to the homepage",

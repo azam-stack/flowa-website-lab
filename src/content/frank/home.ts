@@ -1,26 +1,38 @@
 /**
  * Homepage copy, section by section, in the exact order of brief §4.
  * Every string is from the brief. Mock-up data uses fictional names and
- * fictional companies only. [CONFIRM] placeholders are left as written.
+ * fictional companies only. Copy v2: Frank finds, researches and drafts;
+ * a person at Flowa approves every message; Frank follows up and books.
  */
 export const home = {
   seo: {
-    title: "Frank by FLOWA | AI outbound agent that books B2B meetings",
-    description: "Frank finds companies with a reason to buy now, reaches decision-makers on email and LinkedIn and books qualified meetings into your calendar.",
+    title: "Frank by Flowa | AI outbound agent that books B2B meetings",
+    description: "Frank spots companies with a real reason to buy, researches the decision-maker and drafts the first message. A person checks every word, then Frank follows up and books the meeting.",
   },
 
   /** 4.1 */
   hero: {
     h1Light: "Your AI agent for ",
     h1Bold: "booking B2B meetings",
-    sub: "Frank finds companies with a reason to buy now, starts the conversation on email and LinkedIn, and books qualified meetings into your calendar.",
+    sub: "Frank spots companies with a real reason to buy, researches the decision-maker and writes the first message. We check every word before it goes out, then Frank follows up and books the meeting.",
     demo: "Book a demo",
     video: "See Frank in action",
-    /** The video modal. [CONFIRM video] is shown inside the modal as a visible placeholder. */
-    videoPlaceholder: "[CONFIRM video] A 60–90 second product video goes here.",
+    /** The demo video in the modal: one warm SaaS lead, from signal to booked meeting. */
+    videoSrc: "video/frank-in-action.mp4",
+    videoPoster: "video/poster.jpg",
+    videoNote: "Example is illustrative. People and companies are fictional.",
     videoClose: "Close video",
     cards: {
-      left: { label: "Spots buying signals", mini: { tag: "New signal", body: "Hiring 2 SDRs", time: "4h ago" } },
+      left: {
+        label: "Spots buying signals",
+        mini: { tag: "New signal", body: "Hiring 2 SDRs", time: "4h ago" },
+        /** The left card cycles through these every 4 s. */
+        cycle: [
+          { tag: "New signal", body: "Hiring 2 SDRs", meta: "Oliver Hart · Brightline Software", time: "4h ago", person: "Oliver Hart" },
+          { tag: "LinkedIn post", body: "“Pipeline is thin this quarter”", meta: "Tom Whitfield · Kestrel Creative", time: "1h ago", person: "Tom Whitfield" },
+          { tag: "Leadership change", body: "New Head of Sales", meta: "Priya Nair · Northgate IT Services", time: "today", person: "Priya Nair" },
+        ],
+      },
       centre: { label: "Frank | AI Outbound Agent" },
       right: { label: "Books qualified meetings", mini: { tag: "Qualified meeting", body: "Head of Sales", time: "Tue 10:00" } },
     },
@@ -30,7 +42,7 @@ export const home = {
   tabbed: {
     eyebrow: "Why Frank",
     h2: "Every meeting starts with a reason",
-    sub: "Frank learns what works, then does more of it.",
+    sub: "Frank looks for intent, not just names on a list.",
     mock: {
       countBold: "214",
       countRest: " companies with a signal this week",
@@ -39,20 +51,20 @@ export const home = {
       promptBold: "who should we reach this week?",
       promptPlaceholder: "Describe your ideal customer",
       search: "Search",
-      sources: ["LinkedIn", "Job boards", "Company news", "+ more sources"],
+      sources: ["LinkedIn posts", "Job ads", "Company news", "Comments"],
       /** Fictional people at fictional companies. */
       prospects: [
-        { name: "Oliver Hart", title: "Head of Sales", company: "Brightline Software", size: "120 employees" },
-        { name: "Priya Nair", title: "CRO", company: "Northgate IT Services", size: "85 employees" },
-        { name: "Tom Whitfield", title: "Founder", company: "Kestrel Creative", size: "40 employees" },
-        { name: "Sofie Madsen", title: "COO", company: "Example SaaS", size: "60 employees" },
+        { name: "Oliver Hart", title: "Head of Sales", company: "Brightline Software", size: "120 people", signal: "Hiring SDRs" },
+        { name: "Priya Nair", title: "CRO", company: "Northgate IT Services", size: "85 people", signal: "New in role" },
+        { name: "Tom Whitfield", title: "Founder", company: "Kestrel Creative", size: "40 people", signal: "Asked for recs" },
+        { name: "Sofie Madsen", title: "COO", company: "Example SaaS", size: "60 people", signal: "UK expansion" },
       ],
     },
     tabs: [
-      { key: "companies", title: "The right companies", feature: "Signal-based targeting.", body: "Frank reads job posts, leadership changes, expansion news and founder posts every day, and only picks companies with a real reason to talk now." },
-      { key: "person", title: "The right person", feature: "Verified decision-makers.", body: "Every role is confirmed and every email address is checked before anyone is contacted." },
-      { key: "channel", title: "The right channel", feature: "Email and LinkedIn together.", body: "Frank runs coordinated sequences across email and LinkedIn and adapts to how each prospect responds." },
-      { key: "words", title: "The right words", feature: "One-to-one personalisation.", body: "Every first line opens with a real fact about the company, so the message reads like it was written for them, because it was." },
+      { key: "moment", title: "The right moment", feature: "Live buying signals.", body: "Frank reads LinkedIn posts, comments, job ads and company news every day, and picks up teams with a real reason to talk now." },
+      { key: "person", title: "The right person", feature: "Checked against your ICP.", body: "Every lead passes the same checklist and needs a dated signal we can point to. Zero leads beats wrong leads." },
+      { key: "words", title: "The right words", feature: "One-to-one drafts.", body: "Frank writes a short first message that opens with the thing they actually said. No templates, no AI-sounding fluff." },
+      { key: "hands", title: "The right hands", feature: "A human checks every message.", body: "Nothing goes out until someone at Flowa has read and approved it. That keeps reply rates high and your name safe." },
     ],
   },
 
@@ -60,7 +72,7 @@ export const home = {
   sharper: {
     headline: "Frank gets sharper every week",
     cta: "Book a demo",
-    caption: "Routes that stop producing meetings are dropped. The ones that work run again.",
+    caption: "Signals and messages that don't turn into meetings are dropped. The ones that work are used again.",
   },
 
   /** 4.5 */
@@ -70,8 +82,8 @@ export const home = {
     sub: "From the first signal to a meeting in your calendar.",
     items: [
       { key: "signal", title: "Signal-based outbound", body: "Reach companies at the moment they show a need, not months after a list was exported." },
-      { key: "email", title: "Cold email at scale", body: "Sequences on verified data, with domain setup and deliverability handled for you." },
-      { key: "linkedin", title: "LinkedIn outreach", body: "Connection requests and messages written one to one, where decision-makers already are." },
+      { key: "email", title: "Cold email, done carefully", body: "Short sequences on verified data, with domain setup and deliverability handled for you." },
+      { key: "linkedin", title: "LinkedIn outreach", body: "Connection notes and messages drafted one to one by Frank and approved by a person before they go out." },
       { key: "accounts", title: "Named target accounts", body: "Give Frank the companies you want. He finds the people and opens the door." },
       { key: "noshow", title: "No-show recovery", body: "Missed meetings are followed up and rebooked, and a no-show is never counted as delivered." },
       { key: "crm", title: "CRM and live dashboard", body: "Every reply and booked meeting syncs to your CRM. Watch it happen on your live dashboard." },
@@ -82,7 +94,7 @@ export const home = {
   meet: {
     eyebrow: "Meet Frank",
     h2: "Works while you sleep",
-    sub: "One agent. Every step of outbound.",
+    sub: "Frank does the digging. We keep the quality.",
     nameBar: "Frank | AI Outbound Agent",
     rows: [
       {
@@ -90,29 +102,30 @@ export const home = {
         frankSide: "left" as const,
         pose: "portrait" as const,
         title: "Finds the buyers",
-        sub: "Outbound that runs itself.",
-        body: "Frank scans the market daily, scores every company against your ideal customer profile and writes a short research brief: why now, and what to open with.",
+        sub: "Intent, not lists.",
+        body: "Every morning Frank scans for people showing a need right now, scores them against your ideal customer profile and writes a short brief: why now, and what to open with.",
         mock: { stat: "1,240 companies scanned", chips: ["Why now: hiring two SDRs", "Open with: new UK office"] },
       },
       {
-        key: "books",
+        key: "writes",
         frankSide: "right" as const,
         pose: "laptop" as const,
-        title: "Books the meeting",
-        sub: "Replies handled. Calendar filled.",
-        body: "Frank answers replies, separates genuine interest from a polite yes and books qualified meetings straight into your calendar, with the context you need before you join.",
-        mock: { stat: "4 new meetings booked", insight: "Lead qualified for a first meeting" },
+        title: "Writes the first line",
+        sub: "Drafted by Frank. Approved by a person.",
+        body: "Frank drafts a personal message for LinkedIn or email. A Flowa specialist checks it, tweaks it if needed and sends it at a safe, human pace.",
+        mock: { stat: "Draft ready for review" },
       },
       {
-        key: "learns",
+        key: "books",
         frankSide: "left" as const,
-        pose: "portrait" as const,
-        title: "Keeps learning",
-        sub: "Better every week.",
-        body: "Frank tracks which signals, messages and channels turn into meetings, and shifts effort to what works for your market.",
-        mock: { stat: "3 new signals detected", chips: ["Buying signal", "Buying signal", "Buying signal"], trendLabel: "Reply rate, last 6 weeks" },
+        pose: "thumbs" as const,
+        title: "Books the meeting",
+        sub: "Replies handled. Calendar filled.",
+        body: "When someone replies, we qualify the interest against the criteria we agreed with you, and the meeting lands in your calendar with the context you need.",
+        mock: { stat: "4 new meetings booked", insight: "Lead qualified for a first meeting" },
       },
     ],
+    caption: "Signals and messages that don't turn into meetings are dropped. The ones that work are used again.",
   },
 
   /** 4.7 */
@@ -138,30 +151,27 @@ export const home = {
     h2Light: "Measured in ",
     h2Bold: "meetings",
     h2Rest: ", not promises",
-    /**
-     * [CONFIRM: approved client quote, name, title, company]. Until it is
-     * approved the real founder quote below is shown instead, as the brief
-     * instructs.
-     */
+    /** The founder's own quote, until a client quote is approved. */
     quote: "We'd rather run five campaigns properly than twenty badly. That's why we take on a limited number of clients at a time.",
     quoteName: "Ahmed",
-    quoteRole: "Co-founder, FLOWA",
+    quoteRole: "Co-founder, Flowa",
     stats: [
       { value: "6+", label: "years of B2B outbound" },
       { value: "2,000+", label: "meetings booked" },
       { value: "£3.4M+", label: "revenue generated for clients" },
       { value: "£90K+", label: "record annual sale from one meeting" },
     ],
-    footnote: "FLOWA's own records, all engagements to date.",
+    footnote: "Flowa's own records, all engagements to date.",
   },
 
   /** 4.10 */
   contact: {
     h2: "Let Frank prospect. You take the meetings.",
     sub: "See how Frank can build your pipeline, qualify replies and book the meetings your team wants.",
+    points: ["A reply from Ahmed or Anton within one working day", "Every message checked by a person", "Your data stays yours"],
   },
 
-  /** 4.11, built but hidden behind a flag until approved quotes exist. [CONFIRM] */
+  /** 4.11, built but hidden behind a flag until approved quotes exist. */
   testimonials: {
     enabled: false,
     title: "What clients say about Frank",
@@ -181,13 +191,15 @@ export const home = {
   faq: {
     h2: "Frequently asked questions",
     items: [
-      { q: "What is Frank?", a: "Frank is FLOWA's AI outbound agent. He finds companies with a reason to buy now, contacts the right decision-makers on email and LinkedIn, and books qualified meetings into your calendar." },
+      { q: "What is Frank?", a: "Frank is Flowa's AI outbound agent. He finds companies showing a real reason to buy, researches the decision-maker and drafts the first message. Our team approves every message, and Frank follows up until there's a meeting in your calendar." },
+      { q: "Is it all automated?", a: "The research and the drafts are. The sending isn't. A person reads and approves every message, because one bad message costs more than ten good ones earn." },
       { q: "Does Frank replace my sales team?", a: "No. Frank fills the calendar. Your team does what it's best at: the conversation and the close." },
-      { q: "Who is behind Frank?", a: "FLOWA's co-founders, Ahmed and Anton. They set up your campaign, agree your qualification criteria with you and oversee the results." },
+      { q: "Who is behind Frank?", a: "Flowa's co-founders, Ahmed and Anton. They set up your campaign, agree your qualification criteria with you and check the outreach." },
+      { q: "Where does Frank find leads?", a: "Public buying signals: LinkedIn posts and comments, job ads, leadership changes and company news. Then verified contact data. No bought lists blasted at scale." },
       { q: "What counts as a qualified meeting?", a: "We agree it with you before we start: role or decision-making authority, genuine interest and a match with your ideal customer profile. It's written down, so there's no ambiguity later." },
       { q: "What does it cost?", a: "It depends on your market and volume. Answer three quick questions on our pricing page and we'll send you a quote within one working day.", link: { label: "Go to pricing", href: "/pricing" } },
       { q: "Who owns the data?", a: "You do. Every list, contact and campaign asset built for you stays yours." },
-      { q: "Does Frank work with our CRM?", a: "Yes. Activity and booked meetings sync to the CRM you already use." },
+      { q: "Does Frank work with our CRM?", a: "Booked meetings and replies can be shared with the CRM you already use. We set it up with you during onboarding." },
       { q: "How quickly can we start?", a: "After a first call we agree strategy and your ideal customer profile. Onboarding usually starts shortly after." },
     ],
   },

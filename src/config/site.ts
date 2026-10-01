@@ -1,17 +1,14 @@
 /**
- * Site-wide configuration for the Frank draft. Anything that differs
+ * Site-wide configuration for Frank by Flowa. Anything that differs
  * between environments is read from Vite env variables here, in one
  * place, and nowhere else.
  *
- * The draft never reads the live site's variables (VITE_CONTACT_ENDPOINT,
- * VITE_BOOKING_URL, VITE_ANALYTICS_ENDPOINT): brief §0 forbids touching
- * the live forms, their endpoints and the production analytics property.
- *
- * - VITE_DRAFT_LEAD_ENDPOINT: the draft environment's own POST endpoint
- *   for contact and quote submissions (a separate deployment of
- *   backend/). Unset: the forms open the visitor's email client and say so.
+ * - VITE_CONTACT_ENDPOINT: the POST endpoint for contact and quote
+ *   submissions (the backend/ Cloudflare Worker). The deploy workflow
+ *   already passes it. For a local test worker, set it in .env.local.
+ *   Unset: the forms open the visitor's email client and say so.
  * - VITE_CLIENT_DASHBOARD_URL: the "Client dashboard" nav link. Unset:
- *   the link is not rendered at all. [CONFIRM]
+ *   the link is not rendered at all.
  * - VITE_SITE_URL: the canonical origin of this draft. Defaults to the
  *   GitHub Pages preview.
  * - VITE_DRAFT: "false" removes the noindex meta. Default: draft on.
@@ -19,13 +16,13 @@
 const env = import.meta.env;
 
 export const SITE_CONFIG = {
-  name: "Frank by FLOWA",
-  company: "FLOWA",
+  name: "Frank by Flowa",
+  company: "Flowa",
   siteUrl: ((env.VITE_SITE_URL as string | undefined) || "https://azam-stack.github.io/flowa-website-lab").replace(/\/$/, ""),
   locale: "en_GB",
   lang: "en-GB",
   draft: (env.VITE_DRAFT as string | undefined) !== "false",
-  leadEndpoint: (env.VITE_DRAFT_LEAD_ENDPOINT as string | undefined) || null,
+  leadEndpoint: (env.VITE_CONTACT_ENDPOINT as string | undefined) || null,
   clientDashboardUrl: (env.VITE_CLIENT_DASHBOARD_URL as string | undefined) || null,
   /** Draft analytics only: events stay in window.dataLayer. Nothing is beaconed anywhere. */
   analyticsEndpoint: null as string | null,

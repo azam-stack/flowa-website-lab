@@ -34,6 +34,16 @@ export function Btn({
   trackLabel?: string;
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, "onClick"> & { onClick?: () => void }) {
   const cls = `btn btn-${variant} ${SIZE[size]} ${className}`;
+  // Plain-text labels get the hover label slide: the label slides up and is replaced by itself.
+  const label =
+    typeof children === "string" ? (
+      <span className="btn-label">
+        <span>{children}</span>
+        <span aria-hidden="true">{children}</span>
+      </span>
+    ) : (
+      children
+    );
   const handle = () => {
     if (trackLabel) track("cta_click", { label: trackLabel });
     onClick?.();
@@ -41,13 +51,13 @@ export function Btn({
   if (href) {
     return (
       <SmartLink href={href} className={cls} onClick={handle} aria-disabled={rest.disabled || undefined}>
-        {children}
+        {label}
       </SmartLink>
     );
   }
   return (
     <button type={rest.type ?? "button"} className={cls} onClick={handle} {...rest}>
-      {children}
+      {label}
     </button>
   );
 }

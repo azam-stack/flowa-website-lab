@@ -185,15 +185,12 @@ export function Refresh(p: IconProps) {
   );
 }
 
-/** The smiley-ball icon in the announcement bar: a small sphere with the hand-drawn face. */
+/** The Flowa "o" mark for the announcement bar: the logo loop in white on an orange disc. */
 export function SmileyBall({ size = 22, className = "" }: { size?: number; className?: string }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" className={className}>
-      <circle cx="12" cy="12" r="11" fill="#FFE7C7" stroke="#0C0C0B" strokeWidth="1.25" />
-      <circle cx="8.6" cy="9.4" r="2.6" fill="#fff" opacity="0.7" />
-      <ellipse cx="9" cy="10.5" rx="1.1" ry="1.6" fill="#0C0C0B" />
-      <ellipse cx="15" cy="10.5" rx="1.1" ry="1.6" fill="#0C0C0B" />
-      <path d="M8.3 14.5q3.7 3.4 7.4 0" stroke="#0C0C0B" strokeWidth="1.4" fill="none" strokeLinecap="round" />
+      <circle cx="12" cy="12" r="11.5" fill="#EE9E47" />
+      <path transform="translate(5.6 6.1) scale(0.036)" d="M40 36 C58 12 84 2 132 26 C176 49 212 68 236 65 C256 62 274 61 304 63 C336 66 348 96 348 134 C344 200 298 298 240 292 C206 287 170 302 128 313 C92 322 64 320 50 304 C36 288 44 256 48 232 C52 210 52 196 48 186 C30 128 14 92 22 66 C25 54 31 46 40 36 Z" fill="none" stroke="#fff" strokeWidth="44" strokeLinejoin="round" />
     </svg>
   );
 }

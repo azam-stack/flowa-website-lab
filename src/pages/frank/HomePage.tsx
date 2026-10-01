@@ -8,7 +8,7 @@ import { Proof } from "@/components/frank/Proof";
 import { SectionHeading, Section } from "@/components/frank/SectionHeading";
 import { FinalCta, StatementBand } from "@/components/frank/StatementBand";
 import { spherePile } from "@/components/frank/Sphere";
-import { CalendarStack, EnvelopePlane } from "@/components/frank/Stipple";
+import { CalendarsVignette, SharperVignette } from "@/components/frank/Vignettes";
 import { TabbedFeature } from "@/components/frank/TabbedFeature";
 import { Testimonials } from "@/components/frank/Testimonials";
 import { TrustStrip } from "@/components/frank/TrustStrip";
@@ -33,11 +33,12 @@ export function HomePage() {
         headline={home.sharper.headline}
         cta={home.sharper.cta}
         trackLabel="band_sharper_book_demo"
-        illustration={<EnvelopePlane className="w-full" />}
+        illustration={<SharperVignette />}
         spheres={[
-          { size: 150, tint: 2, x: "30%", y: "28%", duration: 8 },
-          { size: 92, tint: 4, smiley: true, x: "68%", y: "52%", duration: 6.5, delay: 1 },
-          { size: 56, tint: 5, x: "60%", y: "14%", duration: 7.5, delay: 2 },
+          { size: 170, tint: 1, mark: true, x: "34%", y: "26%", duration: 8 },
+          { size: 96, tint: 3, x: "70%", y: "54%", duration: 6.5, delay: 1 },
+          { size: 58, tint: 5, x: "62%", y: "12%", duration: 7.5, delay: 2, blur: true },
+          { size: 70, tint: 1, outline: true, x: "16%", y: "62%", duration: 9, delay: 0.5 },
         ]}
         caption={home.sharper.caption}
       />
@@ -46,7 +47,7 @@ export function HomePage() {
       {/* 4.6 */}
       <MeetFrank />
       {/* 4.7 */}
-      <StatementBand headline={home.calendars.headline} cta={home.calendars.cta} trackLabel="band_calendars_book_demo" illustration={<CalendarStack className="w-full" />} spheres={spherePile} />
+      <StatementBand headline={home.calendars.headline} cta={home.calendars.cta} trackLabel="band_calendars_book_demo" illustration={<CalendarsVignette />} spheres={spherePile} />
       {/* 4.8 */}
       <WhoFrankHelps />
       {/* 4.9 */}

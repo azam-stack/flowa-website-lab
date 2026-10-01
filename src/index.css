@@ -19,25 +19,19 @@
 @layer base {
   :root {
     /* --- colour tokens: brief §2.2, used exactly --- */
-    --page-bg: #fff6ec;
+    --page-bg: #f6f6f3;
     --surface: #ffffff;
-    --surface-soft: #faf9f6;
-    --panel: #f9d9b5;
-    --panel-strong: #f4c28c;
+    --surface-soft: #f1f0ec;
+    --panel: #ffebd6;
+    --panel-strong: #ffd7ae;
     --brand: #ee9e47;
+    --brand-strong: #e2802a;
     --brand-deep: #a25d18;
     --ink: #0c0c0b;
     --ink-2: #1a1b1f;
     --muted: #6b675f;
     --line: rgba(12, 12, 11, 0.08);
 
-    /* sphere tints */
-    --sphere-1: #ee9e47;
-    --sphere-2: #f6b97a;
-    --sphere-3: #fad3a8;
-    --sphere-4: #ffe7c7;
-    --sphere-5: #f08a6c;
-    --sphere-6: #ffffff;
 
     /* --- shape and depth: brief §2.4 --- */
     --r-frame: 20px;
@@ -117,68 +111,19 @@
     background-position: 0 0, 40px 40px, 40px 40px;
   }
 
-  /* 3D clay sphere: highlight top-left, shade bottom-right, soft rim. --c is the tint, --c-dark its shadow. */
-  .sphere {
-    position: relative;
-    border-radius: 50%;
-    background:
-      radial-gradient(circle at 32% 26%, rgba(255, 255, 255, 0.95) 0, rgba(255, 255, 255, 0.5) 9%, rgba(255, 255, 255, 0) 30%),
-      radial-gradient(circle at 50% 50%, var(--c) 0 48%, var(--c-dark) 100%);
-    box-shadow:
-      inset -10px -12px 22px rgba(12, 12, 11, 0.16),
-      inset 6px 8px 16px rgba(255, 255, 255, 0.35),
-      0 10px 24px rgba(12, 12, 11, 0.08);
-  }
+  /* The Flowa "o" shapes: a slow float plus a few degrees of wobble, staggered per shape. */
   .sphere-bob {
     animation: sphere-bob var(--bob-dur, 7s) ease-in-out infinite;
     animation-delay: var(--bob-delay, 0s);
     will-change: transform;
   }
   @keyframes sphere-bob {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+    0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+    50% { transform: translateY(-10px) rotate(calc(var(--rot, 0deg) + 5deg)); }
   }
+  /* Static (no float) shapes keep their tilt. */
+  .sphere-static { transform: rotate(var(--rot, 0deg)); }
 
-  /* Apricot square whose bottom third dissolves into orange stippled grain. */
-  .stipple-bottom {
-    position: relative;
-    background: var(--panel);
-    overflow: hidden;
-  }
-  .stipple-bottom::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background-image: radial-gradient(circle, var(--brand) 1.05px, transparent 1.35px);
-    background-size: 5px 5px;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.55) 80%, #000 100%);
-    mask-image: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.55) 80%, #000 100%);
-  }
-  /* The same grain as a corner decoration (pricing page, bottom-left). */
-  .stipple-corner::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 60%;
-    height: 55%;
-    pointer-events: none;
-    background-image: radial-gradient(circle, var(--brand) 1.05px, transparent 1.35px);
-    background-size: 5px 5px;
-    -webkit-mask-image: radial-gradient(ellipse at 0% 100%, #000 0%, rgba(0, 0, 0, 0.6) 35%, transparent 70%);
-    mask-image: radial-gradient(ellipse at 0% 100%, #000 0%, rgba(0, 0, 0, 0.6) 35%, transparent 70%);
-  }
-
-  /* Dark orange-to-ink wavy gradient behind the tabbed mock-up. */
-  .wavy-dark {
-    background-color: var(--ink);
-    background-image:
-      radial-gradient(60% 50% at 18% 0%, rgba(238, 158, 71, 0.95) 0%, rgba(238, 158, 71, 0) 62%),
-      radial-gradient(50% 42% at 88% 18%, rgba(240, 138, 108, 0.6) 0%, rgba(240, 138, 108, 0) 62%),
-      radial-gradient(70% 60% at 50% 112%, rgba(162, 93, 24, 0.7) 0%, rgba(162, 93, 24, 0) 62%),
-      linear-gradient(180deg, #2b1a0b 0%, var(--ink) 100%);
-  }
   /* The ink mock-up panel for the Meet Frank rows and the signal cards. */
   .mock-dark {
     background: var(--ink);
@@ -325,4 +270,107 @@
   .reveal, .reveal.stagger > * { opacity: 1 !important; transform: none !important; transition: none !important; }
   .btn:hover { transform: none; }
   * { scroll-behavior: auto !important; }
+}
+
+/* ------------------------------------------------------------------
+   Design upgrade: motion and depth (frank-design-upgrade.md §3–§4).
+   All transform/opacity only; everything stops under reduced motion.
+   ------------------------------------------------------------------ */
+@layer components {
+  /* Hero cards lift in one by one on load (60 ms stagger via --i). */
+  .lift-in { animation: lift-in 700ms var(--ease-out) both; animation-delay: calc(200ms + var(--i, 0) * 60ms); }
+  @keyframes lift-in {
+    from { opacity: 0; transform: translateY(28px) scale(0.97); }
+    to { opacity: 1; transform: none; }
+  }
+
+  /* Content swap: crossfade plus a 12px slide (tabs, cycling signals, accordion mock). */
+  .swap-in { animation: swap-in 450ms var(--ease-out) both; }
+  @keyframes swap-in {
+    from { opacity: 0; transform: translateX(12px); }
+    to { opacity: 1; transform: none; }
+  }
+  .swap-up { animation: swap-up 450ms var(--ease-out) both; }
+  @keyframes swap-up {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: none; }
+  }
+  /* Rows that slide in one by one inside a swapped mock (set --i inline). */
+  .row-in { animation: swap-in 420ms var(--ease-out) both; animation-delay: calc(120ms + var(--i, 0) * 90ms); }
+
+  /* Typing indicator: three dots. */
+  .typing { display: inline-flex; gap: 4px; align-items: center; }
+  .typing > span { width: 6px; height: 6px; border-radius: 999px; background: currentColor; opacity: 0.35; animation: typing 1s ease-in-out infinite; }
+  .typing > span:nth-child(2) { animation-delay: 0.15s; }
+  .typing > span:nth-child(3) { animation-delay: 0.3s; }
+  @keyframes typing {
+    0%, 100% { opacity: 0.3; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(-3px); }
+  }
+
+  /* Button label slide: the label slides up and is replaced by itself; arrows nudge 3px. */
+  .btn-label { position: relative; display: inline-flex; overflow: hidden; height: 1.5em; line-height: 1.5em; }
+  .btn-label > span { display: block; transition: transform 320ms var(--ease-out); }
+  .btn-label > span + span { position: absolute; left: 0; top: 100%; }
+  .btn:hover .btn-label > span { transform: translateY(-100%); }
+  .btn .btn-arrow { transition: transform 200ms var(--ease-out); }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Trend line draws itself once in view (pathLength="1"). */
+  .draw-line { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s var(--ease-out); }
+  [data-inview="true"] .draw-line, .draw-line[data-inview="true"] { stroke-dashoffset: 0; }
+  .fill-area { opacity: 0; transition: opacity 900ms ease-out 900ms; }
+  [data-inview="true"] .fill-area { opacity: 0.14; }
+
+  /* Calendar slots fill one by one once in view. */
+  .slot { opacity: 0; transform: scale(0.85); transition: opacity 360ms var(--ease-out), transform 360ms var(--ease-out); transition-delay: calc(200ms + var(--i, 0) * 180ms); }
+  [data-inview="true"] .slot { opacity: 1; transform: none; }
+
+  /* Glass card behind the front card in layered mock-ups. */
+  .glass { background: rgba(255, 255, 255, 0.7); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.6); }
+
+  /* Soft square "pixel" blocks around the /frank hero portrait. */
+  .pixel { position: absolute; border-radius: 6px; background: var(--panel); }
+  .pixel.grey { background: #e9e8e3; }
+
+  /* Live dot pulse. */
+  .live-dot { position: relative; }
+  .live-dot::after { content: ""; position: absolute; inset: -3px; border-radius: 999px; background: currentColor; opacity: 0.4; animation: live 1.8s ease-out infinite; }
+  @keyframes live {
+    from { transform: scale(0.6); opacity: 0.5; }
+    to { transform: scale(1.8); opacity: 0; }
+  }
+
+  /* Accordion body (the /frank "How Frank works" steps). */
+  .acc-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 400ms var(--ease-out); }
+  .acc-body[data-open="true"] { grid-template-rows: 1fr; }
+  .acc-body > div { overflow: hidden; }
+
+  /* The dark contact band: orange focus ring on the white form card. */
+  .contact-dark .control:focus-visible, .contact-dark .checkbox:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; border-color: var(--brand); }
+
+  /* Quiz tiles press in on click. */
+  .press:active { transform: scale(0.98); }
+
+  /* Step check in the pricing quiz. */
+  .check-pop { animation: check-pop 380ms var(--ease-out) both; }
+  @keyframes check-pop {
+    0% { transform: scale(0.4); opacity: 0; }
+    70% { transform: scale(1.15); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lift-in, .swap-in, .swap-up, .row-in, .typing > span, .live-dot::after, .check-pop { animation: none !important; }
+  .draw-line { stroke-dashoffset: 0 !important; transition: none !important; }
+  .fill-area { opacity: 0.14 !important; transition: none !important; }
+  .slot { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .btn-label > span { transition: none !important; }
+  .btn:hover .btn-label > span { transform: none !important; }
+  .acc-body { transition: none !important; }
+}
+@media print {
+  .slot { opacity: 1 !important; transform: none !important; }
+  .draw-line { stroke-dashoffset: 0 !important; }
 }

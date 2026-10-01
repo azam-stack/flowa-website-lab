@@ -34,9 +34,9 @@ Global chrome (`src/components/frank/`): announcement bar, nav with dropdowns an
 
 ## Forms and the draft endpoint
 
-Two submissions, one shape (`src/lib/lead-schema.ts`, shared with the worker): `contact` (first name, work email, message, consent) and `quote` (company_type, team_size, goals[], email, consent), both with `submitted_at`, `page_url` and UTM parameters. With `VITE_DRAFT_LEAD_ENDPOINT` set they POST there and show the real outcome; unset, they open the visitor's email client addressed to info@flowa.dk and say so. The quiz rejects free mailbox domains ("Please use your work email"), requires consent, auto-advances on tiles, and tracks `quiz_step_1`…`quiz_step_4` and `quiz_submit`. Events only ever reach `window.dataLayer`; nothing is beaconed to the production analytics property.
+Two submissions, one shape (`src/lib/lead-schema.ts`, shared with the worker): `contact` (first name, work email, message, consent) and `quote` (company_type, team_size, goals[], email, consent), both with `submitted_at`, `page_url` and UTM parameters. With `VITE_CONTACT_ENDPOINT` set they POST there and show the real outcome; unset, they open the visitor's email client addressed to info@flowa.dk and say so. The quiz rejects free mailbox domains ("Please use your work email"), requires consent, auto-advances on tiles, and tracks `quiz_step_1`…`quiz_step_4` and `quiz_submit`. Events only ever reach `window.dataLayer`; nothing is beaconed to the production analytics property.
 
-The draft never reads the live site's `VITE_CONTACT_ENDPOINT`, `VITE_BOOKING_URL` or `VITE_ANALYTICS_ENDPOINT`.
+The lead endpoint is `VITE_CONTACT_ENDPOINT`, the same name the live site uses. Repository variables are per repo, so this draft only gets a value if one is set on this repo (or locally in `.env.local`). It never reads `VITE_BOOKING_URL` or `VITE_ANALYTICS_ENDPOINT`.
 
 ## Getting started
 

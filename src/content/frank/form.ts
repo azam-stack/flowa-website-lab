@@ -10,7 +10,7 @@ export const shortForm = {
   consentBefore: "I have read the ",
   consentLink: "privacy policy",
   consentHref: "/privacy",
-  consentAfter: " and I am happy for FLOWA to use these details to reply to my enquiry.",
+  consentAfter: " and I am happy for Flowa to use these details to reply to my enquiry.",
   submit: "Get in touch",
   sending: "Sending…",
   errors: {

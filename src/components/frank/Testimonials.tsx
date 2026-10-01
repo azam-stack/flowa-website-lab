@@ -6,8 +6,8 @@ import { Section } from "./SectionHeading";
 
 /**
  * Testimonial carousel (brief §4.11): built, and hidden behind
- * `home.testimonials.enabled` until FLOWA supplies approved quotes
- * [CONFIRM]. It renders nothing while the flag is off or the list is
+ * `home.testimonials.enabled` until Flowa supplies approved quotes
+ * It renders nothing while the flag is off or the list is
  * empty, so no invented review can ever appear.
  */
 export function Testimonials() {

@@ -3,7 +3,7 @@ import { getUtm, track } from "./analytics";
 import { sanitizeLead, validateLead, type Attribution, type LeadErrors, type LeadInput } from "./lead-schema";
 
 /**
- * Submits a contact or quote lead. With VITE_DRAFT_LEAD_ENDPOINT set,
+ * Submits a contact or quote lead. With VITE_CONTACT_ENDPOINT set,
  * POSTs JSON to the draft environment's own endpoint and reports the
  * real outcome (timeout, network, server error, or success). Without it,
  * the honest fallback: open the visitor's email client with the details

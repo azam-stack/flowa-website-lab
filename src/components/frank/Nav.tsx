@@ -12,7 +12,7 @@ import { FrankAvatar } from "./FrankAvatar";
 
 /**
  * Sticky navigation under the announcement bar (brief §3.2): page-bg,
- * 1px ink bottom border, the FLOWA logo, Product / Resources / Company
+ * 1px ink bottom border, the Flowa logo, Product / Resources / Company
  * dropdowns (white cards, 16px radius, hairline border, icon + title +
  * one-line description), a Pricing link, the Client dashboard link
  * (rendered only when a URL is configured) and the black "Book a demo".
@@ -107,7 +107,7 @@ function MobileSheet({ open, onClose, closeRef }: { open: boolean; onClose: () =
   return (
     <div role="dialog" aria-modal="true" aria-label="Menu" className="fixed inset-0 z-[70] flex flex-col bg-page lg:hidden">
       <div className="flex h-[72px] flex-none items-center justify-between border-b border-ink px-4">
-        <Link to="/" onClick={onClose} aria-label="FLOWA home">
+        <Link to="/" onClick={onClose} aria-label="Flowa home">
           <Logo />
         </Link>
         <button ref={closeRef} type="button" onClick={onClose} aria-label={nav.menuClose} className="grid h-11 w-11 place-items-center rounded-control">
@@ -191,7 +191,7 @@ export function Nav() {
     <nav aria-label="Main" className="border-b border-ink bg-page">
       <div className="mx-auto flex h-[72px] w-full max-w-container items-center justify-between gap-6 px-4 md:px-10 xl:px-gutter">
         <div className="flex items-center gap-8">
-          <Link to="/" aria-label="FLOWA home" className="flex items-center rounded-control">
+          <Link to="/" aria-label="Flowa home" className="flex items-center rounded-control">
             <Logo />
           </Link>
           <div className="hidden items-center gap-1 lg:flex">

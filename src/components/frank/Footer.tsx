@@ -10,7 +10,7 @@ export function Footer() {
       <div className="mx-auto w-full max-w-container px-4 py-14 md:px-10 md:py-16 xl:px-gutter">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_repeat(4,1fr)] lg:gap-8">
           <div>
-            <Link to="/" aria-label="FLOWA home" className="inline-flex rounded-control">
+            <Link to="/" aria-label="Flowa home" className="inline-flex rounded-control">
               <Logo />
             </Link>
             <p className="mt-5 max-w-xs text-[17px] font-medium leading-snug text-ink">{footer.tagline}</p>

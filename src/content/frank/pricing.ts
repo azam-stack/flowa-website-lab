@@ -4,17 +4,17 @@
  * Nothing in this file, and nothing rendered from it, may contain a
  * price, a price range, a "from" amount or a package name. The build
  * greps the output for all of them. The only numbers allowed are the
- * proof badge ("2,000+ meetings booked", a verified FLOWA record) and
+ * proof badge ("2,000+ meetings booked", a verified Flowa record) and
  * the team-size bands in the quiz.
  */
 export const pricing = {
-  seo: { title: "Pricing | Frank by FLOWA", description: "A quote built around your market. Answer three quick questions and we will send your quote within one working day." },
+  seo: { title: "Pricing | Frank by Flowa", description: "A quote built around your market. Answer three quick questions and we will send your quote within one working day." },
 
   left: {
     h1Light: "A quote built ",
     h1Bold: "around your market",
-    sub: "One agent. Paid for results. No hidden fees.",
-    bullets: ["Pay for meetings, not activity", "No-shows replaced, never billed", "Your data stays yours"],
+    sub: "One agent. A quote sized to your market. No hidden fees.",
+    bullets: ["Pay for meetings, not activity", "Every message checked by a person", "Your data stays yours"],
     badge: "2,000+ meetings booked",
   },
 
@@ -47,7 +47,7 @@ export const pricing = {
       placeholder: "you@company.com",
       invalid: "That doesn't look like an email address.",
       freeDomain: "Please use your work email",
-      consentBefore: "I agree that FLOWA will collect, store and process my personal data in accordance with the ",
+      consentBefore: "I agree that Flowa will collect, store and process my personal data in accordance with the ",
       consentLink: "privacy policy",
       consentHref: "/privacy",
       consentAfter: ".",
