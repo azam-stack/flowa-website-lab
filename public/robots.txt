@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://flowa.dk/sitemap.xml
+Disallow: /

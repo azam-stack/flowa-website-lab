@@ -1,3 +1,5 @@
+> **This is the lab copy.** Experiment freely; nothing here reaches flowa.dk. The live site is built from [azam-stack/flowa-website](https://github.com/azam-stack/flowa-website).
+
 # Flowa — website
 
 Marketing website for Flowa (B2B appointment setting, cold calling and cold email; a per-meeting Pilot, then fixed monthly packages). Vite + React 18 + TypeScript + Tailwind 3 + React Router. The site is static (GitHub Pages); the lead form posts to a small Cloudflare Worker in `backend/`. Copy is English (en-GB); the market/language/currency decision is still open (see "Decisions that are still the founders'").
