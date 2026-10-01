@@ -24,6 +24,14 @@ export interface Env {
   CRM_WEBHOOK_URL?: string;
   /** Optional: bearer token sent with the webhook. */
   CRM_WEBHOOK_TOKEN?: string;
+  /** Anthropic API key for the "Ask a question" box. Secret: `wrangler secret put ANTHROPIC_API_KEY`. Unset: /api/ask answers 503. */
+  ANTHROPIC_API_KEY?: string;
+  /** Claude model for /api/ask. Default "claude-haiku-4-5". */
+  ASK_MODEL?: string;
+  /** /api/ask requests per IP per 10 minutes. Default 8. */
+  ASK_RATE_LIMIT?: string;
+  /** /api/ask requests per day across all visitors. Default 300. */
+  ASK_DAILY_CAP?: string;
   /** Requests per IP per 10 minutes. Default 5. */
   RATE_LIMIT?: string;
 }

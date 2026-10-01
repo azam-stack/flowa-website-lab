@@ -144,13 +144,22 @@ export const home = {
   /** 4.8 */
   who: {
     eyebrow: "Who it's for",
-    h2: "Pipeline for the whole company",
-    sub: "Founders get pipeline. Sales closes. Nobody builds lists.",
-    columns: [
-      { key: "founders", icon: "trend" as const, title: "Founders and CEOs", body: "Predictable pipeline without hiring an SDR team." },
-      { key: "sales", icon: "calendar" as const, title: "Sales teams", body: "Show up to qualified meetings. Skip the prospecting." },
-      { key: "revenue", icon: "magnifier" as const, title: "Revenue leaders", body: "One clear view of signals, replies and booked meetings." },
+    h2: "Is Flowa right for you?",
+    sub: "We take on a limited number of clients, so we are honest about fit before we start.",
+    fitTitle: "A good fit if you",
+    fit: [
+      "Sell B2B, with the UK as a key market",
+      "Win deals where one new customer is worth a lot, so a single meeting can pay for itself",
+      "Can describe the companies and roles you want to meet",
+      "Have someone ready to take the meeting and close",
     ],
+    notFitTitle: "Not a fit if you",
+    notFit: [
+      "Want thousands of emails sent every week",
+      "Sell low-value or consumer products",
+      "Want messages sent without a person reading them first",
+    ],
+    cta: "Sounds like you? Book a call",
   },
 
   /** 4.9 */
@@ -248,9 +257,12 @@ export const home = {
 
   /** 4.13 */
   faq: {
-    h2: "Frequently asked questions",
+    h2: "Questions, answered",
+    /** The five shown on the homepage; /faq shows them all. */
+    homeQuestions: ["What is Frank?", "Is it all automated?", "What counts as a qualified meeting?", "What does it cost?", "Who owns the data?"],
+    allLink: { label: "See all questions", href: "/faq" },
     items: [
-      { q: "What is Frank?", a: "Frank is Flowa's AI outbound agent. He finds companies showing a real reason to buy, researches the decision-maker and drafts the first message. Our team approves every message, and Frank follows up until there's a meeting in your calendar." },
+      { q: "What is Frank?", a: "Frank is Flowa's AI outbound agent. He finds companies with a real reason to buy and drafts the first message. Ahmed or Anton approves every message, and we follow up until there's a meeting in your calendar." },
       { q: "Is it all automated?", a: "The research and the drafts are. The sending isn't. A person reads and approves every message, because one bad message costs more than ten good ones earn." },
       { q: "Does Flowa replace my sales team?", a: "No. We fill the calendar. Your team does what it's best at: the conversation and the close." },
       { q: "Who is behind Flowa?", a: "Flowa's co-founders, Ahmed Zamzam and Anton Busk. They set up your campaign, agree your qualification criteria with you and check the outreach." },

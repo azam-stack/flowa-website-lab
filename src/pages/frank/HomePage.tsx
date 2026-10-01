@@ -1,6 +1,8 @@
 import { Container } from "@/components/Container";
 import { ContactBand } from "@/components/frank/ContactBand";
+import { AskBox } from "@/components/frank/AskBox";
 import { FaqList } from "@/components/frank/FaqList";
+import { SmartLink } from "@/components/SmartLink";
 import { Hero } from "@/components/frank/Hero";
 import { Marquee } from "@/components/frank/Marquee";
 import { MeetFrank } from "@/components/frank/MeetFrank";
@@ -44,7 +46,15 @@ export function HomePage() {
       <Section id="faq">
         <Container>
           <SectionHeading title={home.faq.h2} />
-          <FaqList items={home.faq.items} className="mx-auto mt-10 max-w-3xl md:mt-14" />
+          <div className="mx-auto mt-10 max-w-3xl md:mt-14">
+            <FaqList items={home.faq.items.filter((i) => (home.faq.homeQuestions as readonly string[]).includes(i.q))} />
+            <div className="mt-6 flex justify-center">
+              <SmartLink href={home.faq.allLink.href} className="text-[15px] font-medium text-brand-deep underline underline-offset-4">
+                {home.faq.allLink.label}
+              </SmartLink>
+            </div>
+            <AskBox className="mt-10" />
+          </div>
         </Container>
       </Section>
     </>

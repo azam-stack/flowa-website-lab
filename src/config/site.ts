@@ -24,6 +24,8 @@ export const SITE_CONFIG = {
   lang: "en-GB",
   draft: (env.VITE_DRAFT as string | undefined) !== "false",
   leadEndpoint: (env.VITE_CONTACT_ENDPOINT as string | undefined) || "https://formsubmit.co/ajax/ahmed@flowa.dk",
+  /** The "Ask a question" box (backend/ worker /api/ask). Unset: the box is not shown. */
+  askEndpoint: (env.VITE_ASK_ENDPOINT as string | undefined) || null,
   /** Where "Book a call" goes: the Cal.com intro call. `guests=` puts Anton on every booking. */
   bookingUrl: (env.VITE_BOOKING_URL as string | undefined) || "https://cal.com/flowa/intro?user=flowa&overlayCalendar=true&guests=anton@flowa.dk",
   clientDashboardUrl: (env.VITE_CLIENT_DASHBOARD_URL as string | undefined) || null,

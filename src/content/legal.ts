@@ -137,6 +137,7 @@ export const privacyPolicy: LegalDoc = {
           "GitHub, for hosting this website",
           "FormSubmit, which receives enquiries from the contact form and the quote form and emails them to us",
           "Cal.com, if you book a call through our booking link",
+          "Anthropic, which answers questions typed into the \"Ask a question\" box. Questions are not stored by us and should not contain personal data",
           "Cloudflare, for the service that receives enquiries from the contact form, where one is configured",
           "Resend, for sending us an internal notification when an enquiry arrives",
           "Microsoft, for our own email",

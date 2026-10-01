@@ -25,7 +25,8 @@ export type AnalyticsEvent =
   | "quiz_step_3"
   | "quiz_step_4"
   | "quiz_submit"
-  | "scroll_depth";
+  | "scroll_depth"
+  | "ask_submit";
 
 export type EventProps = Record<string, string | number | boolean | undefined>;
 

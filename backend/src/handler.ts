@@ -22,7 +22,7 @@ import { rateLimited, isDuplicate } from "./rate-limit";
  */
 const WINDOW_SECONDS = 600;
 
-function corsHeaders(origin: string | null, env: Env): Record<string, string> {
+export function corsHeaders(origin: string | null, env: Env): Record<string, string> {
   const allowed = (env.ALLOWED_ORIGINS || "")
     .split(",")
     .map((s) => s.trim())
@@ -37,7 +37,7 @@ function corsHeaders(origin: string | null, env: Env): Record<string, string> {
   };
 }
 
-function json(body: unknown, status: number, headers: Record<string, string>): Response {
+export function json(body: unknown, status: number, headers: Record<string, string>): Response {
   return new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json", "Cache-Control": "no-store", ...headers } });
 }
 

@@ -1,5 +1,6 @@
 import { Container } from "@/components/Container";
 import { ContactBand } from "@/components/frank/ContactBand";
+import { AskBox } from "@/components/frank/AskBox";
 import { FaqList } from "@/components/frank/FaqList";
 import { PageHero } from "@/components/frank/PageHero";
 import { Section } from "@/components/frank/SectionHeading";
@@ -22,6 +23,7 @@ export function FaqPage() {
             <FaqList items={home.faq.items} className="mt-5" />
             <h2 className="mt-14 text-h3 text-ink">{t.pricingHeading}</h2>
             <FaqList items={pricing.faq.items} className="mt-5" />
+            <AskBox className="mt-14" />
           </div>
         </Container>
       </Section>
