@@ -89,33 +89,6 @@ export function TrustVignette() {
   );
 }
 
-/** Statement band art (4.4): a reply-rate card that draws itself, with a tick card layered on top. */
-export function SharperVignette() {
-  const pts = "M8 70 L60 62 L112 66 L164 48 L216 42 L268 28 L312 18";
-  return (
-    <div className="relative w-full" aria-hidden="true">
-      <div className="rounded-[18px] bg-white p-5 shadow-lift">
-        <div className="flex items-baseline justify-between">
-          <p className="text-[13px] font-medium text-muted">Reply rate, last 6 weeks</p>
-          <p className="text-[13px] font-semibold text-ink">rising</p>
-        </div>
-        <Reveal threshold={0.4}>
-          <svg viewBox="0 0 320 90" className="mt-2 h-24 w-full">
-            <path className="fill-area" d={`${pts} L312 88 L8 88 Z`} fill="#EE9E47" />
-            <path className="draw-line" pathLength={1} d={pts} fill="none" stroke="#EE9E47" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </Reveal>
-      </div>
-      <div className="glass absolute -bottom-6 -right-4 flex items-center gap-2 rounded-card px-3 py-2.5 text-[12px] font-medium text-ink shadow-float md:-right-10">
-        <span className="grid h-5 w-5 place-items-center rounded-full bg-brand">
-          <Check size={11} />
-        </span>
-        Kept what worked, dropped the rest
-      </div>
-    </div>
-  );
-}
-
 /** Statement band art (4.7): three meetings stacked like a calendar filling up. */
 export function CalendarsVignette() {
   const rows = [

@@ -8,7 +8,7 @@ import { Proof, StatsStrip } from "@/components/frank/Proof";
 import { SectionHeading, Section } from "@/components/frank/SectionHeading";
 import { FinalCta, StatementBand } from "@/components/frank/StatementBand";
 import { spherePile } from "@/components/frank/Sphere";
-import { CalendarsVignette, SharperVignette } from "@/components/frank/Vignettes";
+import { CalendarsVignette } from "@/components/frank/Vignettes";
 import { TeamBand } from "@/components/frank/TeamBand";
 import { TabbedFeature } from "@/components/frank/TabbedFeature";
 import { Testimonials } from "@/components/frank/Testimonials";
@@ -31,20 +31,6 @@ export function HomePage() {
       <StatsStrip className="mt-10 md:mt-14" />
       {/* 4.3 */}
       <TabbedFeature />
-      {/* 4.4 */}
-      <StatementBand
-        headline={home.sharper.headline}
-        cta={home.sharper.cta}
-        trackLabel="band_sharper_book_demo"
-        illustration={<SharperVignette />}
-        spheres={[
-          { size: 170, tint: 1, mark: true, x: "34%", y: "26%", duration: 8 },
-          { size: 96, tint: 3, x: "70%", y: "54%", duration: 6.5, delay: 1 },
-          { size: 58, tint: 5, x: "62%", y: "12%", duration: 7.5, delay: 2, blur: true },
-          { size: 70, tint: 1, outline: true, x: "16%", y: "62%", duration: 9, delay: 0.5 },
-        ]}
-        caption={home.sharper.caption}
-      />
       {/* 4.5 */}
       <UseCases />
       {/* 4.6 */}

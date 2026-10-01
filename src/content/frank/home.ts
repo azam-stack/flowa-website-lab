@@ -68,13 +68,6 @@ export const home = {
     ],
   },
 
-  /** 4.4 */
-  sharper: {
-    headline: "Outbound that gets sharper every week",
-    cta: "Book a demo",
-    caption: "Signals and messages that don't turn into meetings are dropped. The ones that work are used again.",
-  },
-
   /** 4.5 */
   useCases: {
     eyebrow: "Use cases",
