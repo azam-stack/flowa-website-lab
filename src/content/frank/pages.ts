@@ -8,10 +8,10 @@
 import { home } from "./home";
 
 export const frankPage = {
-  seo: { title: "Frank, your AI outbound agent | Frank by Flowa", description: "Meet Frank. He finds companies with a reason to buy now, drafts the first message for a person to approve, then follows up and books the meeting." },
+  seo: { title: "Frank, our AI outbound agent | Flowa", description: "Meet Frank. He finds companies with a reason to buy now, drafts the first message for a person to approve, then follows up and books the meeting." },
   h1Light: "Meet ",
   h1Bold: "Frank.",
-  sub: "Your AI outbound agent. He reads your market every day, drafts the first message for a real reason, and books the meeting once a person has approved it.",
+  sub: "Flowa's AI outbound agent. He reads your market every day, drafts the first message for a real reason, and books the meeting once a person has approved it.",
   video: "See Frank in action",
   hotLeads: {
     title: "Hot leads today",
@@ -31,9 +31,9 @@ export const frankPage = {
 } as const;
 
 export const howItWorks = {
-  seo: { title: "How Frank works | Frank by Flowa", description: "Target, spot, reach, book. The four steps Frank runs every week to turn buying signals into qualified meetings." },
+  seo: { title: "How it works | Flowa", description: "Target, spot, reach, book. The four steps we run every week to turn buying signals into qualified meetings." },
   h1Light: "How ",
-  h1Bold: "Frank works",
+  h1Bold: "Flowa works",
   sub: "Four steps, from your ideal customer to a meeting in your calendar.",
   steps: [
     { n: "01", title: "Target", headline: "Agree who is worth meeting", body: "We agree your ideal customer, the roles worth talking to and what counts as a qualified meeting.", mock: "target" as const },
@@ -44,7 +44,7 @@ export const howItWorks = {
 } as const;
 
 export const signals = {
-  seo: { title: "Signals Frank watches | Frank by Flowa", description: "What Frank watches: job posts, leadership changes, expansion moves and founder posts. How a signal becomes a verified, scored, briefed lead." },
+  seo: { title: "Signals Frank watches | Flowa", description: "What Frank watches: job posts, leadership changes, expansion moves and founder posts. How a signal becomes a verified, scored, briefed lead." },
   h1Light: "What ",
   h1Bold: "Frank watches",
   sub: "Static lists tell you who a company is. Frank looks for the reason to talk now.",
@@ -87,7 +87,7 @@ export const signals = {
 } as const;
 
 export const channelEmail = {
-  seo: { title: "Frank on email | Frank by Flowa", description: "Frank on email: verified data, domain setup and deliverability handled, short sequences with a reason to reply, and every reply handled." },
+  seo: { title: "Frank on email | Flowa", description: "Frank on email: verified data, domain setup and deliverability handled, short sequences with a reason to reply, and every reply handled." },
   h1Light: "Frank on ",
   h1Bold: "email",
   sub: "Verified data, deliverability handled, and a reason to reply in the first line.",
@@ -100,21 +100,21 @@ export const channelEmail = {
 } as const;
 
 export const channelLinkedIn = {
-  seo: { title: "Frank on LinkedIn | Frank by Flowa", description: "Frank on LinkedIn: one-to-one connection notes and messages to decision-makers, and named target accounts worked by hand." },
+  seo: { title: "Frank on LinkedIn | Flowa", description: "Frank on LinkedIn: one-to-one connection notes and messages to decision-makers, and named target accounts worked by hand." },
   h1Light: "Frank on ",
   h1Bold: "LinkedIn",
   sub: "Where decision-makers already are, with a note written for one person.",
   blocks: [
     { title: "One-to-one connection notes", body: "A connection request to a named person who fits the agreed ideal customer profile, never a bulk send to a scraped list." },
     { title: "Messages written for one person", body: "Every message opens on a real fact about the company and is approved by a person before it is sent." },
-    { title: "Named accounts", body: "Give Frank the companies you want. He finds the people and opens the door." },
+    { title: "Named accounts", body: "Give us the companies you want. Frank finds the people, and we open the door." },
     { title: "Permanent opt-outs", body: "Anyone who asks not to hear from us is suppressed across every campaign, for good." },
   ],
 } as const;
 
 export const casesPage = {
-  seo: { title: "Cases | Frank by Flowa", description: "Meetings Frank has created. Documented, not dramatised. Case studies appear here once a client has approved what we can say." },
-  h1Light: "Meetings Frank has created. ",
+  seo: { title: "Cases | Flowa", description: "Meetings Flowa has created. Documented, not dramatised. Case studies appear here once a client has approved what we can say." },
+  h1Light: "Meetings Flowa has created. ",
   h1Bold: "Documented, not dramatised.",
   sub: "Every case follows the same six parts, and nothing is published until the client has approved it.",
   structureEyebrow: "How a case is written",
@@ -134,10 +134,10 @@ export const casesPage = {
 } as const;
 
 export const aboutPage = {
-  seo: { title: "About us | Frank by Flowa", description: "The people behind Frank: Ahmed and Anton, Flowa's co-founders, who set up and oversee every campaign." },
+  seo: { title: "About us | Flowa", description: "The people behind Flowa: Ahmed and Anton, Flowa's co-founders, who set up and oversee every campaign." },
   h1Light: "The people ",
-  h1Bold: "behind Frank",
-  sub: "Frank is built and operated by Flowa. Two co-founders set up and oversee every client's campaign.",
+  h1Bold: "behind Flowa",
+  sub: "Flowa builds and runs Frank, our AI outbound agent. Two co-founders set up and oversee every client's campaign.",
   people: [
     { name: "Ahmed", role: "Co-founder", owns: ["Market research and targeting", "Outreach copy", "Reporting"] },
     { name: "Anton", role: "Co-founder", owns: ["Campaign strategy", "LinkedIn and conversations", "Booking and follow-up"] },
@@ -150,12 +150,12 @@ export const aboutPage = {
 
 export const contactPage = {
   demo: {
-    seo: { title: "Book a demo | Frank by Flowa", description: "See how Frank can build your pipeline, qualify replies and book the meetings your team wants." },
+    seo: { title: "Book a demo | Flowa", description: "See how Flowa can build your pipeline, qualify replies and book the meetings your team wants." },
     h1Light: "Book a ",
     h1Bold: "demo",
   },
   contact: {
-    seo: { title: "Contact | Frank by Flowa", description: "Talk to Ahmed or Anton. Tell us who you sell to and we will reply within one working day." },
+    seo: { title: "Contact | Flowa", description: "Talk to Ahmed or Anton. Tell us who you sell to and we will reply within one working day." },
     h1Light: "Get in ",
     h1Bold: "touch",
   },
@@ -163,16 +163,16 @@ export const contactPage = {
 } as const;
 
 export const faqPage = {
-  seo: { title: "FAQ | Frank by Flowa", description: "Straight answers about Frank, qualified meetings, pricing, data ownership and getting started." },
+  seo: { title: "FAQ | Flowa", description: "Straight answers about Flowa, Frank, qualified meetings, pricing, data ownership and getting started." },
   h1Light: "Frequently asked ",
   h1Bold: "questions",
-  generalHeading: "About Frank",
+  generalHeading: "About Flowa and Frank",
   pricingHeading: "Pricing",
 } as const;
 
 export const notFound = {
-  seo: { title: "Page not found | Frank by Flowa", description: "That page does not exist." },
-  h1: "Frank could not find that page.",
+  seo: { title: "Page not found | Flowa", description: "That page does not exist." },
+  h1: "We could not find that page.",
   body: "The link may be out of date. Try the homepage, or ask Frank below.",
   cta: "Back to the homepage",
 } as const;

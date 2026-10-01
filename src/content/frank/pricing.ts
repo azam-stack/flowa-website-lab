@@ -8,7 +8,7 @@
  * the team-size bands in the quiz.
  */
 export const pricing = {
-  seo: { title: "Pricing | Frank by Flowa", description: "A quote built around your market. Answer three quick questions and we will send your quote within one working day." },
+  seo: { title: "Pricing | Flowa", description: "A quote built around your market. Answer three quick questions and we will send your quote within one working day." },
 
   left: {
     h1Light: "A quote built ",
@@ -37,7 +37,7 @@ export const pricing = {
       options: ["1–10", "11–50", "51–200", "200+"],
     },
     goals: {
-      question: "What do you want Frank to do?",
+      question: "What do you want us to do?",
       hint: "Select all that apply:",
       options: ["Book more qualified meetings", "Reach specific target accounts", "Test outbound before committing", "Support or replace an SDR", "Expand into the UK market"],
     },
@@ -55,12 +55,12 @@ export const pricing = {
   },
 
   success: {
-    h3: "Frank's on it.",
+    h3: "We're on it.",
     bodyBefore: "Ahmed or Anton will send your quote to ",
     bodyAfter: " within one working day.",
     sooner: "Want to talk sooner? Book a demo →",
     soonerHref: "/demo",
-    /** Shown instead of "Frank's on it." when no draft endpoint is configured and the email client was opened. */
+    /** Shown instead of "We're on it." when no draft endpoint is configured and the email client was opened. */
     mailtoTitle: "We've opened your email client with your answers filled in.",
     mailtoBody: "Press send there and Ahmed or Anton will reply with your quote within one working day. If nothing opened, write to us at",
     error: "We couldn't reach our server, so nothing was sent. Try again, or write to us at",
@@ -96,7 +96,7 @@ export const pricing = {
   },
 
   finalCta: {
-    h2: "Let's size Frank for you",
+    h2: "Let's size your outbound",
     cta: "Get my quote",
   },
 } as const;

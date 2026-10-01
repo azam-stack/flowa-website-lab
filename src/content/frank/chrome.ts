@@ -7,9 +7,9 @@
  */
 export const announcement = {
   lead: "Meet Frank,",
-  rest: " your new AI outbound agent",
+  rest: " our new AI outbound agent",
   href: "/frank",
-  ariaLabel: "Meet Frank, your new AI outbound agent",
+  ariaLabel: "Meet Frank, our new AI outbound agent",
 } as const;
 
 export type MenuItem = { title: string; description: string; href: string; icon: "frank" | "steps" | "signals" | "mail" | "linkedin" | "cases" | "faq" | "about" | "contact" };
@@ -32,7 +32,7 @@ export const nav = {
       key: "resources",
       label: "Resources",
       items: [
-        { title: "Cases", description: "Meetings Frank has created, documented.", href: "/cases", icon: "cases" },
+        { title: "Cases", description: "Meetings Flowa has created, documented.", href: "/cases", icon: "cases" },
         { title: "FAQ", description: "Straight answers to the usual questions.", href: "/faq", icon: "faq" },
       ],
     },
@@ -40,7 +40,7 @@ export const nav = {
       key: "company",
       label: "Company",
       items: [
-        { title: "About us", description: "The people behind Frank.", href: "/about", icon: "about" },
+        { title: "About us", description: "The people behind Flowa.", href: "/about", icon: "about" },
         { title: "Contact", description: "Talk to Ahmed or Anton.", href: "/contact", icon: "contact" },
       ],
     },
@@ -72,11 +72,11 @@ export const chat = {
 } as const;
 
 export const marquee = {
-  heading: "Join the companies Frank has booked meetings for",
+  heading: "Join the companies Flowa has booked meetings for",
 } as const;
 
 export const footer = {
-  tagline: "Frank finds the buyers. You close the deals.",
+  tagline: "Flowa finds the buyers. You close the deals.",
   email: "info@flowa.dk",
   columns: [
     {
@@ -109,7 +109,7 @@ export const footer = {
       ],
     },
   ],
-  bottom: "© 2026 Flowa. Frank is an AI agent built and operated by Flowa. Every message is checked by a person.",
+  bottom: "© 2026 Flowa. Frank is Flowa's AI outbound agent. Every message is checked by a person.",
 } as const;
 
 /** Shared call-to-action labels. */

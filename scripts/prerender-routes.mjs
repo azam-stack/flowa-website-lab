@@ -18,7 +18,7 @@ const dist = path.join(root, "dist");
 const base = (process.env.VITE_BASE || "/").replace(/\/$/, "");
 const DRAFT = process.env.VITE_DRAFT !== "false";
 const SITE = (process.env.VITE_SITE_URL || "https://azam-stack.github.io/flowa-website-lab").replace(/\/$/, "");
-const SITE_NAME = "Frank by FLOWA";
+const SITE_NAME = "Flowa";
 const OG_IMAGE = `${SITE}/og-image.png`;
 
 // Bundle the TypeScript content modules for Node with esbuild (Vite's own bundler).
@@ -57,7 +57,7 @@ function headFor(r) {
     `<meta property="og:image" content="${OG_IMAGE}" />`,
     `<meta property="og:image:width" content="1200" />`,
     `<meta property="og:image:height" content="630" />`,
-    `<meta property="og:image:alt" content="Meet Frank, FLOWA's AI outbound agent" />`,
+    `<meta property="og:image:alt" content="Meet Frank, Flowa's AI outbound agent" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${esc(r.ogTitle ?? r.title)}" />`,
     `<meta name="twitter:description" content="${esc(r.ogDescription ?? r.description)}" />`,

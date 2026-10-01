@@ -16,7 +16,7 @@
 const env = import.meta.env;
 
 export const SITE_CONFIG = {
-  name: "Frank by Flowa",
+  name: "Flowa",
   company: "Flowa",
   siteUrl: ((env.VITE_SITE_URL as string | undefined) || "https://azam-stack.github.io/flowa-website-lab").replace(/\/$/, ""),
   locale: "en_GB",

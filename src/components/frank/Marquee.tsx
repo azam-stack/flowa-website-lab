@@ -111,15 +111,16 @@ export function Marquee({ className = "" }: { className?: string }) {
 
 function LogoLink({ client, ariaHidden, onImgLoad }: { client: Client; ariaHidden?: boolean; onImgLoad?: () => void }) {
   return (
-    <a href={client.url} target="_blank" rel="noopener noreferrer" aria-hidden={ariaHidden || undefined} tabIndex={ariaHidden ? -1 : undefined} className="group shrink-0 rounded-control">
+    <span aria-hidden={ariaHidden || undefined} className="shrink-0">
       <img
         src={asset(`logos/${client.slug}.${client.format ?? "svg"}`)}
         alt={ariaHidden ? "" : client.name}
         loading="lazy"
         onLoad={onImgLoad}
         style={{ transform: `scale(${client.scale ?? 1})` }}
-        className="h-[22px] w-auto origin-center grayscale opacity-75 transition-all duration-200 group-hover:grayscale-0 group-hover:opacity-100 md:h-7"
+        className="pointer-events-none h-[22px] w-auto origin-center select-none grayscale opacity-75 md:h-7"
+        draggable={false}
       />
-    </a>
+    </span>
   );
 }

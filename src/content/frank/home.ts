@@ -6,15 +6,15 @@
  */
 export const home = {
   seo: {
-    title: "Frank by Flowa | AI outbound agent that books B2B meetings",
-    description: "Frank spots companies with a real reason to buy, researches the decision-maker and drafts the first message. A person checks every word, then Frank follows up and books the meeting.",
+    title: "Flowa | AI-powered outbound that books B2B meetings",
+    description: "Flowa books qualified B2B meetings. Our AI agent Frank finds companies with a real reason to buy and drafts the first message; Ahmed and Anton approve every word and book the meeting.",
   },
 
   /** 4.1 */
   hero: {
-    h1Light: "Your AI agent for ",
-    h1Bold: "booking B2B meetings",
-    sub: "Frank finds companies with a real reason to buy and drafts the first message. Ahmed and Anton approve every word and book the meeting.",
+    h1Light: "Outbound that books ",
+    h1Bold: "B2B meetings",
+    sub: "Our AI agent Frank finds buyers with a real reason to talk. Ahmed and Anton approve every message and book the meeting.",
     demo: "Book a demo",
     video: "See Frank in action",
     /** The demo video in the modal: one warm SaaS lead, from signal to booked meeting. */
@@ -40,9 +40,9 @@ export const home = {
 
   /** 4.3 */
   tabbed: {
-    eyebrow: "Why Frank",
+    eyebrow: "Why Flowa",
     h2: "Every meeting starts with a reason",
-    sub: "Frank looks for intent, not just names on a list.",
+    sub: "We look for intent, not just names on a list.",
     mock: {
       countBold: "214",
       countRest: " companies with a signal this week",
@@ -70,7 +70,7 @@ export const home = {
 
   /** 4.4 */
   sharper: {
-    headline: "Frank gets sharper every week",
+    headline: "Outbound that gets sharper every week",
     cta: "Book a demo",
     caption: "Signals and messages that don't turn into meetings are dropped. The ones that work are used again.",
   },
@@ -92,7 +92,7 @@ export const home = {
 
   /** People band: Frank does the digging, Ahmed and Anton do the talking. */
   team: {
-    eyebrow: "The people behind Frank",
+    eyebrow: "The people behind Flowa",
     h2: "Frank does the digging. Ahmed and Anton do the talking.",
     sub: "Every message is read and approved by one of Flowa's co-founders before it goes out, and they keep every conversation going until there is a meeting.",
     people: [
@@ -184,15 +184,15 @@ export const home = {
 
   /** 4.10 */
   contact: {
-    h2: "Let Frank prospect. You take the meetings.",
-    sub: "See how Frank can build your pipeline, qualify replies and book the meetings your team wants.",
+    h2: "Let Flowa prospect. You take the meetings.",
+    sub: "See how Flowa can build your pipeline, qualify replies and book the meetings your team wants.",
     points: ["A reply from Ahmed or Anton within one working day", "Every message checked by a person", "Your data stays yours"],
   },
 
   /** 4.11, built but hidden behind a flag until approved quotes exist. */
   testimonials: {
     enabled: false,
-    title: "What clients say about Frank",
+    title: "What clients say about Flowa",
     prev: "Previous testimonial",
     next: "Next testimonial",
     items: [] as { quote: string; name: string; role: string; company: string }[],
@@ -201,7 +201,7 @@ export const home = {
   /** 4.12 */
   finalCta: {
     eyebrow: "See it in action",
-    h2: "Frank works. You close.",
+    h2: "We book. You close.",
     cta: "Book a demo",
   },
 
@@ -211,13 +211,13 @@ export const home = {
     items: [
       { q: "What is Frank?", a: "Frank is Flowa's AI outbound agent. He finds companies showing a real reason to buy, researches the decision-maker and drafts the first message. Our team approves every message, and Frank follows up until there's a meeting in your calendar." },
       { q: "Is it all automated?", a: "The research and the drafts are. The sending isn't. A person reads and approves every message, because one bad message costs more than ten good ones earn." },
-      { q: "Does Frank replace my sales team?", a: "No. Frank fills the calendar. Your team does what it's best at: the conversation and the close." },
-      { q: "Who is behind Frank?", a: "Flowa's co-founders, Ahmed and Anton. They set up your campaign, agree your qualification criteria with you and check the outreach." },
+      { q: "Does Flowa replace my sales team?", a: "No. We fill the calendar. Your team does what it's best at: the conversation and the close." },
+      { q: "Who is behind Flowa?", a: "Flowa's co-founders, Ahmed and Anton. They set up your campaign, agree your qualification criteria with you and check the outreach." },
       { q: "Where does Frank find leads?", a: "Public buying signals: LinkedIn posts and comments, job ads, leadership changes and company news. Then verified contact data. No bought lists blasted at scale." },
       { q: "What counts as a qualified meeting?", a: "We agree it with you before we start: role or decision-making authority, genuine interest and a match with your ideal customer profile. It's written down, so there's no ambiguity later." },
       { q: "What does it cost?", a: "It depends on your market and volume. Answer three quick questions on our pricing page and we'll send you a quote within one working day.", link: { label: "Go to pricing", href: "/pricing" } },
       { q: "Who owns the data?", a: "You do. Every list, contact and campaign asset built for you stays yours." },
-      { q: "Does Frank work with our CRM?", a: "Booked meetings and replies can be shared with the CRM you already use. We set it up with you during onboarding." },
+      { q: "Does Flowa work with our CRM?", a: "Booked meetings and replies can be shared with the CRM you already use. We set it up with you during onboarding." },
       { q: "How quickly can we start?", a: "After a first call we agree strategy and your ideal customer profile. Onboarding usually starts shortly after." },
     ],
   },
