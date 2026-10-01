@@ -8,7 +8,7 @@ const MAX = 300;
 const SUGGESTIONS = ["Who writes the messages?", "Where do your leads come from?", "What if a meeting is a no-show?"];
 
 /**
- * "Ask a question": a visitor types a question and Claude answers from
+ * "Ask a question": a visitor types a question and an AI answers from
  * Flowa's approved facts only (backend/src/ask.ts). Anything outside them
  * is handed to Ahmed and Anton. Rendered only when VITE_ASK_ENDPOINT is
  * set, so the site never shows a box that cannot answer.
@@ -100,7 +100,7 @@ export function AskBox({ className = "" }: { className?: string }) {
           <Send size={15} />
         </button>
       </form>
-      <p className="mt-3 text-[12px] text-muted">AI answers (Claude) based on Flowa's own FAQ. Please don't include personal details. Anything specific goes to Ahmed or Anton.</p>
+      <p className="mt-3 text-[12px] text-muted">AI answers based only on Flowa's own FAQ. Please don't include personal details. Anything specific goes to Ahmed or Anton.</p>
     </div>
   );
 }
