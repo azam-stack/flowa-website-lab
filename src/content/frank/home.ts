@@ -14,7 +14,7 @@ export const home = {
   hero: {
     h1Light: "Your AI agent for ",
     h1Bold: "booking B2B meetings",
-    sub: "Frank spots companies with a real reason to buy, researches the decision-maker and writes the first message. We check every word before it goes out, then Frank follows up and books the meeting.",
+    sub: "Frank finds companies with a real reason to buy and drafts the first message. We approve every word. Frank books the meeting.",
     demo: "Book a demo",
     video: "See Frank in action",
     /** The demo video in the modal: one warm SaaS lead, from signal to booked meeting. */
@@ -28,13 +28,13 @@ export const home = {
         mini: { tag: "New signal", body: "Hiring 2 SDRs", time: "4h ago" },
         /** The left card cycles through these every 4 s. */
         cycle: [
-          { tag: "New signal", body: "Hiring 2 SDRs", meta: "Oliver Hart · Brightline Software", time: "4h ago", person: "Oliver Hart" },
-          { tag: "LinkedIn post", body: "“Pipeline is thin this quarter”", meta: "Tom Whitfield · Kestrel Creative", time: "1h ago", person: "Tom Whitfield" },
-          { tag: "Leadership change", body: "New Head of Sales", meta: "Priya Nair · Northgate IT Services", time: "today", person: "Priya Nair" },
+          { tag: "New signal", body: "Hiring 2 SDRs", meta: "Brightline Software", time: "4h ago", person: "Oliver Hart" },
+          { tag: "LinkedIn post", body: "“Pipeline is thin this quarter”", meta: "Kestrel Creative", time: "1h ago", person: "Tom Whitfield" },
+          { tag: "Leadership change", body: "New Head of Sales", meta: "Northgate IT Services", time: "today", person: "Priya Nair" },
         ],
       },
       centre: { label: "Frank | AI Outbound Agent" },
-      right: { label: "Books qualified meetings", mini: { tag: "Qualified meeting", body: "Head of Sales", time: "Tue 10:00" } },
+      right: { label: "Books qualified meetings", mini: { tag: "Booked", body: "Priya Nair", time: "Tue 10:00" } },
     },
   },
 

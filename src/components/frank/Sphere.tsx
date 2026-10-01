@@ -136,19 +136,9 @@ export function SphereGroup({ items, className = "", speed = 0.12 }: { items: Pl
   );
 }
 
-/** The hero cluster: left and right edges, cropped by the frame. */
-export const heroClusterLeft: Placed[] = [
-  { size: 170, tint: 1, x: "-70px", y: "54%", duration: 8 },
-  { size: 100, tint: 3, mark: true, x: "70px", y: "70%", duration: 6.5, delay: 1.2 },
-  { size: 58, tint: 5, x: "24px", y: "38%", duration: 7.5, delay: 0.4, blur: true },
-  { size: 40, tint: 6, x: "150px", y: "56%", duration: 9, delay: 2, blur: true },
-];
-export const heroClusterRight: Placed[] = [
-  { size: 180, tint: 2, mark: true, x: "calc(100% - 120px)", y: "50%", duration: 8.5, delay: 0.3 },
-  { size: 84, tint: 3, x: "calc(100% - 200px)", y: "76%", duration: 6, delay: 1.5 },
-  { size: 50, tint: 6, mark: true, x: "calc(100% - 64px)", y: "34%", duration: 7, delay: 2.4, blur: true },
-  { size: 34, tint: 5, x: "calc(100% - 236px)", y: "46%", duration: 9, delay: 0.9, blur: true },
-];
+/** The hero: one large orange "o" with the logo line bottom-left, one peach "o" on the right, both cropped by the frame. */
+export const heroClusterLeft: Placed[] = [{ size: 190, tint: 1, mark: true, x: "-70px", y: "56%", duration: 8, rotate: -12 }];
+export const heroClusterRight: Placed[] = [{ size: 150, tint: 3, x: "calc(100% - 100px)", y: "46%", duration: 9, delay: 1.2, rotate: 16 }];
 /** Loose spheres for statement bands. */
 export const spherePile: Placed[] = [
   { size: 190, tint: 1, x: "40%", y: "30%", duration: 8 },

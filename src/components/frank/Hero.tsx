@@ -21,8 +21,10 @@ import { VideoModal } from "./VideoModal";
  */
 function SideCard({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="flex flex-col gap-2 rounded-card border border-ink bg-surface p-2 shadow-float">
-      <div className="grid aspect-[4/3] place-items-center rounded-[10px] bg-soft p-4">{children}</div>
+    <div className="flex min-w-0 flex-col gap-2 rounded-card border border-ink bg-surface p-2 shadow-float">
+      <div className="grid aspect-[4/3] min-w-0 place-items-center rounded-[10px] bg-soft p-3 lg:p-4">
+        <div className="w-full min-w-0">{children}</div>
+      </div>
       <div className="label-bar px-3 py-2 text-center text-[13px] font-medium">{label}</div>
     </div>
   );
@@ -69,7 +71,7 @@ export function Hero() {
           </div>
 
           <div className="relative z-[3] -mt-[180px] md:-mt-[200px]">
-            <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory items-end gap-4 overflow-x-auto px-4 pb-2 md:mx-auto md:grid md:max-w-[900px] md:grid-cols-[1fr_1.18fr_1fr] md:gap-5 md:overflow-visible md:px-6">
+            <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory items-end gap-4 overflow-x-auto px-4 pb-2 md:mx-auto md:grid md:max-w-[900px] md:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)_minmax(0,1fr)] md:gap-5 md:overflow-visible md:px-6">
               <div className="lift-in w-[76vw] max-w-[320px] flex-none snap-center md:w-auto md:max-w-none" style={{ "--i": 0 } as React.CSSProperties}>
                 <SideCard label={h.cards.left.label}>
                   <HeroSignalMini />

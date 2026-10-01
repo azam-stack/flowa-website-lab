@@ -411,15 +411,14 @@ export function HeroMeetingMini({ tag, body, time }: { tag: string; body: string
     <div className="w-full rounded-card bg-white p-3.5 text-left shadow-lift" aria-hidden="true">
       <div className="flex items-center justify-between gap-2">
         <Chip className="text-[12px]">{tag}</Chip>
-        <span className="text-[11px] text-muted">{time}</span>
+        <span className="whitespace-nowrap text-[11px] text-muted">{time}</span>
       </div>
       <div className="mt-3 flex items-center gap-2.5">
         <Avatar name="Priya Nair" size={36} status="ok" />
         <div className="min-w-0">
           <p className="truncate text-[14px] font-semibold text-ink">{body}</p>
-          <p className="truncate text-[11px] text-muted">Northgate IT · in your calendar</p>
+          <p className="truncate text-[11px] text-muted">CRO · Northgate IT</p>
         </div>
-        <ChannelBadge kind="calendar" size={24} className="ml-auto" />
       </div>
     </div>
   );
