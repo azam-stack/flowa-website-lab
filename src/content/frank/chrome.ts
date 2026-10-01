@@ -5,6 +5,8 @@
  *
  * Anything not yet approved is hidden behind a flag, never shown as a placeholder.
  */
+import { SITE_CONFIG } from "@/config/site";
+
 export const announcement = {
   lead: "Meet Frank,",
   rest: " our new AI outbound agent",
@@ -48,7 +50,7 @@ export const nav = {
   pricing: { label: "Pricing", href: "/pricing" },
   /** Hidden until Flowa provides a URL: while `href` is null the link is not rendered at all. */
   clientDashboard: { label: "Client dashboard", href: null as string | null },
-  demo: { label: "Book a demo", href: "/demo" },
+  demo: { label: "Book a call", href: SITE_CONFIG.bookingUrl },
   menuOpen: "Open menu",
   menuClose: "Close menu",
   skipToContent: "Skip to content",
@@ -58,8 +60,8 @@ export const chat = {
   greeting: "Morning! I found 4 companies hiring SDRs this week. Want me to say hi?",
   meta: "Frank · now",
   placeholder: "Ask Frank anything",
-  bookMeeting: "Book a meeting",
-  bookMeetingHref: "/demo",
+  bookMeeting: "Book a call",
+  bookMeetingHref: SITE_CONFIG.bookingUrl,
   send: "Send",
   open: "Open chat with Frank",
   close: "Close chat",
@@ -67,7 +69,7 @@ export const chat = {
   quickReplies: [
     { label: "How does Frank work?", href: "/how-it-works" },
     { label: "What does it cost?", href: "/pricing" },
-    { label: "Book a meeting", href: "/demo" },
+    { label: "Book a call", href: SITE_CONFIG.bookingUrl },
   ],
 } as const;
 
@@ -114,8 +116,8 @@ export const footer = {
 
 /** Shared call-to-action labels. */
 export const cta = {
-  demo: "Book a demo",
-  demoHref: "/demo",
+  demo: "Book a call",
+  demoHref: SITE_CONFIG.bookingUrl,
   quote: "Get my quote",
   contact: "Get in touch",
 } as const;

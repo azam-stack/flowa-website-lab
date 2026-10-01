@@ -7,6 +7,8 @@ import type { Config } from "tailwindcss";
  */
 export default {
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
+  // Btn builds these as `btn-${variant}`, which the scanner cannot see.
+  safelist: ["btn-primary", "btn-outline", "btn-text"],
   theme: {
     extend: {
       colors: {

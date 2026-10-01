@@ -15,7 +15,7 @@ export const home = {
     h1Light: "Outbound that books ",
     h1Bold: "B2B meetings",
     sub: "Our AI agent Frank finds buyers with a real reason to talk. Ahmed and Anton approve every message and book the meeting.",
-    demo: "Book a demo",
+    demo: "Book a call",
     video: "See Frank in action",
     /** The demo video in the modal: one warm SaaS lead, from signal to booked meeting. */
     videoSrc: "video/frank-in-action.mp4",
@@ -89,8 +89,8 @@ export const home = {
     h2: "Frank does the digging. Ahmed and Anton do the talking.",
     sub: "Every message is read and approved by one of Flowa's co-founders before it goes out, and they keep every conversation going until there is a meeting.",
     people: [
-      { key: "ahmed", name: "Ahmed", role: "Co-founder", does: "Approves every message and owns your targeting" },
-      { key: "anton", name: "Anton", role: "Co-founder", does: "Runs the conversations and books the meetings" },
+      { key: "ahmed", name: "Ahmed Zamzam", role: "Co-founder", does: "Approves every message and owns your targeting" },
+      { key: "anton", name: "Anton Busk", role: "Co-founder", does: "Runs the conversations and books the meetings" },
     ],
     frankDoes: "Finds the signals, researches the buyer and drafts the first line",
     cta: "Meet the team",
@@ -138,7 +138,7 @@ export const home = {
   /** 4.7 */
   calendars: {
     headline: "Built to fill calendars",
-    cta: "Book a demo",
+    cta: "Book a call",
   },
 
   /** 4.8 */
@@ -160,7 +160,7 @@ export const home = {
     h2Rest: ", not promises",
     /** The founder's own quote, until a client quote is approved. */
     quote: "We'd rather run five campaigns properly than twenty badly. That's why we take on a limited number of clients at a time.",
-    quoteName: "Ahmed",
+    quoteName: "Ahmed Zamzam",
     quoteRole: "Co-founder, Flowa",
     stats: [
       { value: "6+", label: "years of B2B outbound" },
@@ -173,6 +173,54 @@ export const home = {
     stripTitle: "Our own numbers, not promises",
     stripTitleLight: "Our own numbers, ",
     stripTitleBold: "not promises",
+  },
+
+  /** How an engagement runs, week by week. */
+  engagement: {
+    eyebrow: "How we work together",
+    h2: "From first call to meetings in your calendar",
+    sub: "A clear plan from day one, run by the same two people from start to finish.",
+    steps: [
+      { when: "Week 1", title: "Kick-off", body: "A call with Ahmed and Anton. We agree your ideal customer, the roles worth meeting and, in writing, what counts as a qualified meeting." },
+      { when: "Week 2", title: "First messages", body: "Frank starts finding buying signals. Every first message is drafted for one person and approved by us before it goes out." },
+      { when: "Week 3 onwards", title: "Conversations", body: "Replies come in. Anton keeps every conversation going and qualifies the interest against the criteria we agreed." },
+      { when: "Ongoing", title: "Meetings", body: "Qualified meetings land in your calendar with a short brief: who they are, why now and what to open with." },
+    ],
+  },
+
+  /** The commercial promise (Flowa's standing terms). */
+  promise: {
+    eyebrow: "Our promise",
+    h2Light: "You pay for meetings ",
+    h2Bold: "that actually happen.",
+    sub: "Outbound is a risk for you. We carry as much of it as we can.",
+    points: [
+      { title: "Held meetings only", body: "A meeting counts when it takes place with someone who meets the criteria we agreed with you. Activity is never billed." },
+      { title: "No-shows rebooked", body: "If someone doesn't turn up, tell us within 24 hours and we rebook the meeting so the lead stays warm." },
+      { title: "Criteria in writing", body: "We write down what a qualified meeting is before we start, so there is never any doubt about what you are paying for." },
+    ],
+  },
+
+  /** Compliance and brand safety (UK). */
+  compliance: {
+    eyebrow: "Safe for your brand",
+    h2: "Outreach your legal team can sign off",
+    sub: "Built around UK GDPR and PECR, with a person checking every message that carries your name.",
+    items: [
+      { title: "Business contacts only", body: "We contact people in their professional role, about something relevant to their job, with a clear way to say no." },
+      { title: "Opt-outs are permanent", body: "Anyone who asks not to hear from us is suppressed across every campaign, for good." },
+      { title: "No bought lists", body: "Every lead comes from a public buying signal and verified contact data. Nothing is blasted at scale." },
+      { title: "Your data stays yours", body: "Every list, contact and campaign asset built for you belongs to you, and we never sell data to anyone." },
+    ],
+    link: { label: "Read our privacy policy", href: "/privacy" },
+  },
+
+  /** Homepage results: published client cases. */
+  results: {
+    eyebrow: "Client results",
+    h2: "What one meeting can be worth",
+    sub: "Two results our clients have let us share.",
+    cta: "See all cases",
   },
 
   /** 4.10 */
@@ -195,7 +243,7 @@ export const home = {
   finalCta: {
     eyebrow: "See it in action",
     h2: "We book. You close.",
-    cta: "Book a demo",
+    cta: "Book a call",
   },
 
   /** 4.13 */
@@ -205,7 +253,7 @@ export const home = {
       { q: "What is Frank?", a: "Frank is Flowa's AI outbound agent. He finds companies showing a real reason to buy, researches the decision-maker and drafts the first message. Our team approves every message, and Frank follows up until there's a meeting in your calendar." },
       { q: "Is it all automated?", a: "The research and the drafts are. The sending isn't. A person reads and approves every message, because one bad message costs more than ten good ones earn." },
       { q: "Does Flowa replace my sales team?", a: "No. We fill the calendar. Your team does what it's best at: the conversation and the close." },
-      { q: "Who is behind Flowa?", a: "Flowa's co-founders, Ahmed and Anton. They set up your campaign, agree your qualification criteria with you and check the outreach." },
+      { q: "Who is behind Flowa?", a: "Flowa's co-founders, Ahmed Zamzam and Anton Busk. They set up your campaign, agree your qualification criteria with you and check the outreach." },
       { q: "Where does Frank find leads?", a: "Public buying signals: LinkedIn posts and comments, job ads, leadership changes and company news. Then verified contact data. No bought lists blasted at scale." },
       { q: "What counts as a qualified meeting?", a: "We agree it with you before we start: role or decision-making authority, genuine interest and a match with your ideal customer profile. It's written down, so there's no ambiguity later." },
       { q: "What does it cost?", a: "It depends on your market and volume. Answer three quick questions on our pricing page and we'll send you a quote within one working day.", link: { label: "Go to pricing", href: "/pricing" } },

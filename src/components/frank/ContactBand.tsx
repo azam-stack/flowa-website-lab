@@ -3,7 +3,9 @@ import { Reveal } from "@/components/Reveal";
 import { home } from "@/content/frank/home";
 import { asset } from "@/lib/asset";
 import { FrankAvatar, type FrankPose } from "./FrankAvatar";
-import { Check } from "./Icons";
+import { Calendar, Check } from "./Icons";
+import { SITE_CONFIG } from "@/config/site";
+import { track } from "@/lib/analytics";
 import { Sphere } from "./Sphere";
 import { ShortForm } from "./ShortForm";
 
@@ -13,7 +15,7 @@ import { ShortForm } from "./ShortForm";
  * white card on the right with an orange focus ring. On /demo
  * and /contact the same band is the page, with Frank waving (pose b).
  */
-export function ContactBand({ h2 = home.contact.h2, sub = home.contact.sub, pose, idPrefix = "contact", id = "contact", as: Heading = "h2" }: { h2?: string; sub?: string; pose?: FrankPose; idPrefix?: string; id?: string; as?: "h1" | "h2" }) {
+export function ContactBand({ h2 = home.contact.h2, sub = home.contact.sub, pose, idPrefix = "contact", id = "contact", as: Heading = "h2", calendar }: { h2?: string; sub?: string; pose?: FrankPose; idPrefix?: string; id?: string; as?: "h1" | "h2"; calendar?: { cta: string; note: string; orForm: string } }) {
   return (
     <section id={id} className="contact-dark relative overflow-hidden bg-ink py-section-m text-white lg:py-section" aria-label={h2}>
       <img src={asset("images/backgrounds/silk-dark.webp")} alt="" loading="lazy" decoding="async" className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-80" aria-hidden="true" />
@@ -25,6 +27,15 @@ export function ContactBand({ h2 = home.contact.h2, sub = home.contact.sub, pose
             {pose && <FrankAvatar pose={pose} className="mb-8 h-44 w-44 rounded-frame border border-white/30" />}
             <Heading className="text-h2 text-white">{h2}</Heading>
             <p className="mt-4 max-w-lead text-sub text-white/75">{sub}</p>
+            {calendar && (
+              <div className="mt-8">
+                <a href={SITE_CONFIG.bookingUrl} target="_blank" rel="noopener noreferrer" onClick={() => track("cta_click", { label: "book_call_calendar" })} className="btn h-14 bg-brand px-7 text-[17px] text-ink hover:bg-brand-strong">
+                  <Calendar size={18} /> {calendar.cta}
+                </a>
+                <p className="mt-3 text-small text-white/70">{calendar.note}</p>
+                <p className="mt-6 text-[15px] text-white/85">{calendar.orForm}</p>
+              </div>
+            )}
             <ul className="mt-8 flex flex-col gap-3 text-[15px] text-white/85">
               {home.contact.points.map((pt) => (
                 <li key={pt} className="flex items-center gap-3">

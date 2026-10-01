@@ -4,9 +4,10 @@
  * place, and nowhere else.
  *
  * - VITE_CONTACT_ENDPOINT: the POST endpoint for contact and quote
- *   submissions (the backend/ Cloudflare Worker). The deploy workflow
- *   already passes it. For a local test worker, set it in .env.local.
- *   Unset: the forms open the visitor's email client and say so.
+ *   submissions (the backend/ Cloudflare Worker, once deployed). Unset:
+ *   submissions go to FormSubmit, which emails them to ahmed@flowa.dk.
+ * - VITE_BOOKING_URL: the calendar every "Book a call" button opens.
+ *   Defaults to the Cal.com intro call, with Anton added as a guest.
  * - VITE_CLIENT_DASHBOARD_URL: the "Client dashboard" nav link. Unset:
  *   the link is not rendered at all.
  * - VITE_SITE_URL: the canonical origin of this draft. Defaults to the
@@ -22,7 +23,9 @@ export const SITE_CONFIG = {
   locale: "en_GB",
   lang: "en-GB",
   draft: (env.VITE_DRAFT as string | undefined) !== "false",
-  leadEndpoint: (env.VITE_CONTACT_ENDPOINT as string | undefined) || null,
+  leadEndpoint: (env.VITE_CONTACT_ENDPOINT as string | undefined) || "https://formsubmit.co/ajax/ahmed@flowa.dk",
+  /** Where "Book a call" goes: the Cal.com intro call. `guests=` puts Anton on every booking. */
+  bookingUrl: (env.VITE_BOOKING_URL as string | undefined) || "https://cal.com/flowa/intro?user=flowa&overlayCalendar=true&guests=anton@flowa.dk",
   clientDashboardUrl: (env.VITE_CLIENT_DASHBOARD_URL as string | undefined) || null,
   /** Draft analytics only: events stay in window.dataLayer. Nothing is beaconed anywhere. */
   analyticsEndpoint: null as string | null,

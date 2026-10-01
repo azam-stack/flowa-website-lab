@@ -6,6 +6,7 @@ import { PricingCard } from "@/components/frank/PricingQuiz";
 import { SectionHeading, Section } from "@/components/frank/SectionHeading";
 import { FinalCta } from "@/components/frank/StatementBand";
 import { Testimonials } from "@/components/frank/Testimonials";
+import { ComplianceSection, EngagementTimeline, PromiseBand } from "@/components/frank/TrustSections";
 import { Reveal } from "@/components/Reveal";
 import { pricing as t } from "@/content/frank/pricing";
 import { breadcrumbJsonLd, faqJsonLd, useSeo } from "@/lib/seo";
@@ -34,6 +35,9 @@ export function PricingPage() {
           </Reveal>
         </Container>
       </Section>
+      <PromiseBand />
+      <EngagementTimeline />
+      <ComplianceSection />
       <Testimonials />
       <Section>
         <Container>

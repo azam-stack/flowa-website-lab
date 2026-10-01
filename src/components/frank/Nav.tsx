@@ -15,9 +15,9 @@ import { FrankAvatar } from "./FrankAvatar";
  * 1px ink bottom border, the Flowa logo, Product / Resources / Company
  * dropdowns (white cards, 16px radius, hairline border, icon + title +
  * one-line description), a Pricing link, the Client dashboard link
- * (rendered only when a URL is configured) and the black "Book a demo".
+ * (rendered only when a URL is configured) and the black "Book a call".
  * Mobile: hamburger to a full-screen sheet with accordion sub-menus and
- * "Book a demo" pinned at the bottom.
+ * "Book a call" pinned at the bottom.
  */
 function ItemIcon({ icon }: { icon: MenuItem["icon"] }) {
   const cls = "h-10 w-10 flex-none grid place-items-center rounded-full bg-panel text-ink";

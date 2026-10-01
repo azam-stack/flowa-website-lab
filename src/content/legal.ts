@@ -135,6 +135,8 @@ export const privacyPolicy: LegalDoc = {
         p("We keep the list of suppliers short and we do not sell data to anyone. The processors we use are:"),
         list([
           "GitHub, for hosting this website",
+          "FormSubmit, which receives enquiries from the contact form and the quote form and emails them to us",
+          "Cal.com, if you book a call through our booking link",
           "Cloudflare, for the service that receives enquiries from the contact form, where one is configured",
           "Resend, for sending us an internal notification when an enquiry arrives",
           "Microsoft, for our own email",

@@ -9,8 +9,6 @@ import { aboutPage as t } from "@/content/frank/pages";
 import { asset } from "@/lib/asset";
 import { breadcrumbJsonLd, useSeo } from "@/lib/seo";
 
-const PHOTO: Record<string, string> = { Ahmed: "ahmed", Anton: "anton" };
-
 /**
  * /about: "The people behind Frank". The portraits are the founders' own
  * photos, already published on the live site.
@@ -24,7 +22,7 @@ export function AboutPage() {
         <Container>
           <Reveal stagger as="ul" className="grid gap-6 md:grid-cols-2">
             {t.people.map((p) => {
-              const slug = PHOTO[p.name];
+              const slug = p.slug;
               return (
                 <li key={p.name} className="framed grid gap-6 p-5 sm:grid-cols-[180px_1fr] md:p-7">
                   <div className="aspect-[4/5] overflow-hidden rounded-card bg-panel">

@@ -113,34 +113,43 @@ export const channelLinkedIn = {
 } as const;
 
 export const casesPage = {
-  seo: { title: "Cases | Flowa", description: "Meetings Flowa has created. Documented, not dramatised. Case studies appear here once a client has approved what we can say." },
+  seo: { title: "Cases | Flowa", description: "Meetings Flowa has created for its clients: a first meeting with one of Denmark's largest insurers for DataPeeps, and an annual sale worth over 90,000 pounds for Generaxion." },
   h1Light: "Meetings Flowa has created. ",
   h1Bold: "Documented, not dramatised.",
-  sub: "Every case follows the same six parts, and nothing is published until the client has approved it.",
-  structureEyebrow: "How a case is written",
-  structureH2: "Six parts, every time",
-  parts: [
-    { n: "01", title: "The client", body: "Who they are, what they sell and to whom." },
-    { n: "02", title: "The challenge", body: "What outbound looked like before, and why it was not enough." },
-    { n: "03", title: "The target", body: "The ideal customer profile and the signals we agreed to watch." },
-    { n: "04", title: "The work", body: "Channels, cadence and how qualification was defined." },
-    { n: "05", title: "The result", body: "Meetings booked and what they turned into, in the client's own numbers." },
-    { n: "06", title: "In their words", body: "A quote the client has approved." },
+  sub: "Real meetings for real clients. Each case is published with the client's approval.",
+  /** Results only as the clients reported them. The insurer is deliberately not named. */
+  cases: [
+    {
+      slug: "datapeeps",
+      client: "DataPeeps",
+      sells: "Sells data and leads to companies such as insurers",
+      work: "We mapped the decision-makers at the insurers that fit DataPeeps' profile and opened the conversation with a message written for one person.",
+      resultBig: "Top-tier insurer",
+      resultLabel: "First meeting booked with one of Denmark's largest insurance companies",
+    },
+    {
+      slug: "generaxion",
+      client: "Generaxion",
+      sells: "",
+      work: "We booked qualified first meetings against the criteria agreed with Generaxion before we started.",
+      resultBig: "£90K+",
+      resultLabel: "Annual sale generated from a single meeting we booked",
+    },
   ],
-  /** No client-approved case exists yet; the list renders empty rather than inventing one. */
-  emptyNote: "The first published cases will appear here once clients have approved them.",
+  caseLabels: { work: "What we did", result: "Result" },
+  approvalNote: "Results as reported by the clients. Published with their permission.",
   contactH2: "Want to be the next case?",
   contactSub: "Tell us who you sell to. Ahmed or Anton will reply within one working day.",
 } as const;
 
 export const aboutPage = {
-  seo: { title: "About us | Flowa", description: "The people behind Flowa: Ahmed and Anton, Flowa's co-founders, who set up and oversee every campaign." },
+  seo: { title: "About us | Flowa", description: "The people behind Flowa: Ahmed Zamzam and Anton Busk, Flowa's co-founders, who set up and oversee every campaign." },
   h1Light: "The people ",
   h1Bold: "behind Flowa",
   sub: "Flowa builds and runs Frank, our AI outbound agent. Two co-founders set up and oversee every client's campaign.",
   people: [
-    { name: "Ahmed", role: "Co-founder", owns: ["Market research and targeting", "Outreach copy", "Reporting"] },
-    { name: "Anton", role: "Co-founder", owns: ["Campaign strategy", "LinkedIn and conversations", "Booking and follow-up"] },
+    { name: "Ahmed Zamzam", slug: "ahmed", role: "Co-founder", owns: ["Market research and targeting", "Outreach copy", "Reporting"] },
+    { name: "Anton Busk", slug: "anton", role: "Co-founder", owns: ["Campaign strategy", "LinkedIn and conversations", "Booking and follow-up"] },
   ],
   quote: home.proof.quote,
   quoteName: home.proof.quoteName,
@@ -150,9 +159,12 @@ export const aboutPage = {
 
 export const contactPage = {
   demo: {
-    seo: { title: "Book a demo | Flowa", description: "See how Flowa can build your pipeline, qualify replies and book the meetings your team wants." },
+    seo: { title: "Book a call | Flowa", description: "Pick a time for a 20-minute intro call with Ahmed and Anton, or send us a message." },
     h1Light: "Book a ",
-    h1Bold: "demo",
+    h1Bold: "call",
+    calendarCta: "Pick a time in our calendar",
+    calendarNote: "A 20-minute intro call on Microsoft Teams with Ahmed and Anton. No slides.",
+    orForm: "Or send us a message and we will reply within one working day.",
   },
   contact: {
     seo: { title: "Contact | Flowa", description: "Talk to Ahmed or Anton. Tell us who you sell to and we will reply within one working day." },
