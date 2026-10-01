@@ -5,7 +5,7 @@ import { useReducedMotion } from "@/hooks/useInView";
  * The Flowa "o": the organic loop from the Flowa logo, used as the
  * brand's own floating shape instead of generic spheres. Solid versions
  * are soft clay-like forms (highlight top-left, shade bottom-right, a
- * fine grain); `mark` draws the logo's white outline inside the shape;
+ * fine grain); `mark` is kept for API compatibility and draws nothing;
  * `outline` is the bare loop as a line. Every shape floats ±10px over
  * 6–9s and wobbles a few degrees, staggered. Decorative and aria-hidden.
  */
@@ -57,7 +57,6 @@ export function FlowaO({ tint = 1, mark = false, outline = false, stroke = "#0C0
       <path d={FLOWA_O} transform="translate(10 26)" fill="#0C0C0B" opacity="0.12" filter={`url(#${id}-soft)`} />
       <path d={FLOWA_O} fill={`url(#${id}-g)`} />
       <path d={FLOWA_O} fill="#000" filter={`url(#${id}-grain)`} />
-      {mark && <path d={FLOWA_O} transform="translate(180 165) scale(0.62) translate(-180 -165)" fill="none" stroke="#FFFFFF" strokeWidth="12" strokeLinejoin="round" />}
     </svg>
   );
 }

@@ -185,12 +185,11 @@ export function Refresh(p: IconProps) {
   );
 }
 
-/** The Flowa "o" mark for the announcement bar: the logo loop in white on an orange disc. */
+/** The Flowa "o" for the announcement bar: the logo loop as a small solid orange shape. */
 export function SmileyBall({ size = 22, className = "" }: { size?: number; className?: string }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" className={className}>
-      <circle cx="12" cy="12" r="11.5" fill="#EE9E47" />
-      <path transform="translate(5.6 6.1) scale(0.036)" d="M40 36 C58 12 84 2 132 26 C176 49 212 68 236 65 C256 62 274 61 304 63 C336 66 348 96 348 134 C344 200 298 298 240 292 C206 287 170 302 128 313 C92 322 64 320 50 304 C36 288 44 256 48 232 C52 210 52 196 48 186 C30 128 14 92 22 66 C25 54 31 46 40 36 Z" fill="none" stroke="#fff" strokeWidth="44" strokeLinejoin="round" />
+    <svg width={size} height={size} viewBox="-10 -20 380 370" aria-hidden="true" className={className}>
+      <path d="M40 36 C58 12 84 2 132 26 C176 49 212 68 236 65 C256 62 274 61 304 63 C336 66 348 96 348 134 C344 200 298 298 240 292 C206 287 170 302 128 313 C92 322 64 320 50 304 C36 288 44 256 48 232 C52 210 52 196 48 186 C30 128 14 92 22 66 C25 54 31 46 40 36 Z" fill="#0C0C0B" />
     </svg>
   );
 }
