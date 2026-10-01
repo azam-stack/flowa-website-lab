@@ -7,12 +7,33 @@ import { ArrowRight, Calendar, Check, Mail } from "./Icons";
 import { SectionHeading, Section } from "./SectionHeading";
 import { Avatar } from "./Mocks";
 import { FlowaO } from "./Sphere";
+import { asset } from "@/lib/asset";
 
 type Key = (typeof home.useCases.items)[number]["key"];
 
-/** The illustration panel on each use-case card: a mini UI collage with Frank's avatar. */
-function Art({ k }: { k: Key }) {
-  const frank = <FrankAvatar decorative round className="absolute bottom-3 left-3 h-12 w-12 border-2 border-white" />;
+type Who = "frank" | "ahmed" | "anton";
+
+/** Who does the work on this card: overlapping faces (Frank and/or the founders) with a short label. */
+export function TeamStack({ who, label, className = "" }: { who: readonly string[]; label: string; className?: string }) {
+  return (
+    <div className={`flex items-center gap-2 rounded-pill bg-white py-1 pl-1 pr-3 shadow-float ${className}`}>
+      <span className="flex -space-x-2">
+        {(who as Who[]).map((w) =>
+          w === "frank" ? (
+            <FrankAvatar key={w} decorative round className="h-8 w-8 ring-2 ring-white" />
+          ) : (
+            <img key={w} src={asset(`images/team/${w}.webp`)} alt="" width={32} height={32} loading="lazy" className="h-8 w-8 rounded-full object-cover object-top ring-2 ring-white grayscale-[30%]" />
+          ),
+        )}
+      </span>
+      <span className="whitespace-nowrap text-[12px] font-medium text-ink">{label}</span>
+    </div>
+  );
+}
+
+/** The illustration panel on each use-case card: a mini UI collage plus who does the work. */
+function Art({ k, who, label }: { k: Key; who: readonly string[]; label: string }) {
+  const frank = <TeamStack who={who} label={label} className="absolute bottom-3 left-3" />;
   const mini = "rounded-[12px] bg-white p-3 shadow-float text-ink";
   if (k === "signal")
     return (
@@ -46,7 +67,7 @@ function Art({ k }: { k: Key }) {
             </div>
           ))}
         </div>
-        <div className="absolute bottom-4 right-4">
+        <div className="absolute right-4 top-[56%]">
           <Chip>
             <Check size={13} /> Deliverability healthy
           </Chip>
@@ -64,7 +85,7 @@ function Art({ k }: { k: Key }) {
           </div>
           <p className="mt-2 text-[12px] leading-relaxed text-ink-2">Hi Priya, saw Northgate just appointed a new sales lead. Happy to connect, no pitch.</p>
         </div>
-        <div className="absolute bottom-4 right-4">
+        <div className="absolute right-4 top-[56%]">
           <Chip>
             <Check size={13} /> Approved by a person
           </Chip>
@@ -94,7 +115,7 @@ function Art({ k }: { k: Key }) {
             </div>
           ))}
         </div>
-        <div className="absolute bottom-4 right-4">
+        <div className="absolute right-4 top-[56%]">
           <Chip>Door opened: 2 of 3</Chip>
         </div>
         {frank}
@@ -114,7 +135,7 @@ function Art({ k }: { k: Key }) {
             <p className="text-[12px] font-semibold">Tue 10:00</p>
           </div>
         </div>
-        <div className="absolute bottom-4 right-4">
+        <div className="absolute right-4 top-[56%]">
           <Chip>Not counted as delivered</Chip>
         </div>
         {frank}
@@ -161,7 +182,7 @@ export function UseCases() {
             <li key={item.key} className="flex min-w-0 flex-col">
               <div className="relative aspect-[4/3] overflow-hidden rounded-card border border-line bg-soft transition-transform duration-300 ease-out hover:-translate-y-1" aria-hidden="true">
                 <FlowaO tint={TINT[item.key]} className="absolute -right-8 -top-10 h-40 w-40 rotate-12 opacity-80" />
-                <Art k={item.key} />
+                <Art k={item.key} who={item.who} label={item.whoLabel} />
               </div>
               <h3 className="mt-5 text-h3 text-ink">{item.title}</h3>
               <p className="mt-2 text-body text-ink-2">{item.body}</p>

@@ -14,7 +14,7 @@ export const home = {
   hero: {
     h1Light: "Your AI agent for ",
     h1Bold: "booking B2B meetings",
-    sub: "Frank finds companies with a real reason to buy and drafts the first message. We approve every word. Frank books the meeting.",
+    sub: "Frank finds companies with a real reason to buy and drafts the first message. Ahmed and Anton approve every word and book the meeting.",
     demo: "Book a demo",
     video: "See Frank in action",
     /** The demo video in the modal: one warm SaaS lead, from signal to booked meeting. */
@@ -64,7 +64,7 @@ export const home = {
       { key: "moment", title: "The right moment", feature: "Live buying signals.", body: "Frank reads LinkedIn posts, comments, job ads and company news every day, and picks up teams with a real reason to talk now." },
       { key: "person", title: "The right person", feature: "Checked against your ICP.", body: "Every lead passes the same checklist and needs a dated signal we can point to. Zero leads beats wrong leads." },
       { key: "words", title: "The right words", feature: "One-to-one drafts.", body: "Frank writes a short first message that opens with the thing they actually said. No templates, no AI-sounding fluff." },
-      { key: "hands", title: "The right hands", feature: "A human checks every message.", body: "Nothing goes out until someone at Flowa has read and approved it. That keeps reply rates high and your name safe." },
+      { key: "hands", title: "The right hands", feature: "A human checks every message.", body: "Nothing goes out until Ahmed or Anton has read and approved it. That keeps reply rates high and your name safe." },
     ],
   },
 
@@ -78,23 +78,37 @@ export const home = {
   /** 4.5 */
   useCases: {
     eyebrow: "Use cases",
-    h2: "One agent, your whole outbound",
-    sub: "From the first signal to a meeting in your calendar.",
+    h2: "One team, your whole outbound",
+    sub: "Frank does the research and the drafts. Ahmed and Anton approve every message and keep the conversations going.",
     items: [
-      { key: "signal", title: "Signal-based outbound", body: "Reach companies at the moment they show a need, not months after a list was exported." },
-      { key: "email", title: "Cold email, done carefully", body: "Short sequences on verified data, with domain setup and deliverability handled for you." },
-      { key: "linkedin", title: "LinkedIn outreach", body: "Connection notes and messages drafted one to one by Frank and approved by a person before they go out." },
-      { key: "accounts", title: "Named target accounts", body: "Give Frank the companies you want. He finds the people and opens the door." },
-      { key: "noshow", title: "No-show recovery", body: "Missed meetings are followed up and rebooked, and a no-show is never counted as delivered." },
-      { key: "crm", title: "CRM and live dashboard", body: "Every reply and booked meeting syncs to your CRM. Watch it happen on your live dashboard." },
+      { key: "signal", title: "Signal-based outbound", body: "Reach companies at the moment they show a need, not months after a list was exported.", who: ["frank"], whoLabel: "Frank spots it" },
+      { key: "email", title: "Cold email, done carefully", body: "Short sequences on verified data. Frank drafts, Ahmed approves, and deliverability is handled for you.", who: ["frank", "ahmed"], whoLabel: "Frank drafts · Ahmed approves" },
+      { key: "linkedin", title: "LinkedIn outreach", body: "Notes and messages drafted one to one by Frank. Anton approves each one and keeps the conversation going.", who: ["frank", "anton"], whoLabel: "Frank drafts · Anton replies" },
+      { key: "accounts", title: "Named target accounts", body: "Give us the companies you want. Frank finds the right people, and we open the door.", who: ["frank", "ahmed", "anton"], whoLabel: "Frank finds · we reach out" },
+      { key: "noshow", title: "No-show recovery", body: "Missed meetings are followed up and rebooked by us, and a no-show is never counted as delivered.", who: ["anton"], whoLabel: "Anton follows up" },
+      { key: "crm", title: "CRM and live dashboard", body: "Every reply and booked meeting syncs to your CRM. Watch it happen on your live dashboard.", who: ["ahmed", "anton"], whoLabel: "You see everything" },
     ],
+  },
+
+  /** People band: Frank does the digging, Ahmed and Anton do the talking. */
+  team: {
+    eyebrow: "The people behind Frank",
+    h2: "Frank does the digging. Ahmed and Anton do the talking.",
+    sub: "Every message is read and approved by one of Flowa's co-founders before it goes out, and they keep every conversation going until there is a meeting.",
+    people: [
+      { key: "ahmed", name: "Ahmed", role: "Co-founder", does: "Approves every message and owns your targeting" },
+      { key: "anton", name: "Anton", role: "Co-founder", does: "Runs the conversations and books the meetings" },
+    ],
+    frankDoes: "Finds the signals, researches the buyer and drafts the first line",
+    cta: "Meet the team",
+    ctaHref: "/about",
   },
 
   /** 4.6 */
   meet: {
     eyebrow: "Meet Frank",
     h2: "Works while you sleep",
-    sub: "Frank does the digging. We keep the quality.",
+    sub: "Frank does the digging. Ahmed and Anton keep the quality.",
     nameBar: "Frank | AI Outbound Agent",
     rows: [
       {
@@ -112,7 +126,7 @@ export const home = {
         pose: "laptop" as const,
         title: "Writes the first line",
         sub: "Drafted by Frank. Approved by a person.",
-        body: "Frank drafts a personal message for LinkedIn or email. A Flowa specialist checks it, tweaks it if needed and sends it at a safe, human pace.",
+        body: "Frank drafts a personal message for LinkedIn or email. Ahmed or Anton checks it, tweaks it if needed and sends it at a safe, human pace.",
         mock: { stat: "Draft ready for review" },
       },
       {
@@ -121,7 +135,7 @@ export const home = {
         pose: "thumbs" as const,
         title: "Books the meeting",
         sub: "Replies handled. Calendar filled.",
-        body: "When someone replies, we qualify the interest against the criteria we agreed with you, and the meeting lands in your calendar with the context you need.",
+        body: "When someone replies, Anton keeps the conversation going, qualifies the interest against the criteria we agreed with you, and the meeting lands in your calendar with the context you need.",
         mock: { stat: "4 new meetings booked", insight: "Lead qualified for a first meeting" },
       },
     ],

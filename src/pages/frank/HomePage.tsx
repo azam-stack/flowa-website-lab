@@ -9,6 +9,7 @@ import { SectionHeading, Section } from "@/components/frank/SectionHeading";
 import { FinalCta, StatementBand } from "@/components/frank/StatementBand";
 import { spherePile } from "@/components/frank/Sphere";
 import { CalendarsVignette, SharperVignette } from "@/components/frank/Vignettes";
+import { TeamBand } from "@/components/frank/TeamBand";
 import { TabbedFeature } from "@/components/frank/TabbedFeature";
 import { Testimonials } from "@/components/frank/Testimonials";
 import { TrustStrip } from "@/components/frank/TrustStrip";
@@ -46,6 +47,8 @@ export function HomePage() {
       <UseCases />
       {/* 4.6 */}
       <MeetFrank />
+      {/* The humans: Ahmed and Anton approve and run the conversations */}
+      <TeamBand />
       {/* 4.7 */}
       <StatementBand headline={home.calendars.headline} cta={home.calendars.cta} trackLabel="band_calendars_book_demo" illustration={<CalendarsVignette />} spheres={spherePile} />
       {/* 4.8 */}
