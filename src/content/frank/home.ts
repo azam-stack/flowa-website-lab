@@ -176,6 +176,10 @@ export const home = {
       { value: "£90K+", label: "record annual sale from one meeting" },
     ],
     footnote: "Flowa's own records, all engagements to date.",
+    /** The stats strip under the client logos on the homepage. */
+    stripTitle: "Our own numbers, not promises",
+    stripTitleLight: "Our own numbers, ",
+    stripTitleBold: "not promises",
   },
 
   /** 4.10 */

@@ -4,7 +4,7 @@ import { FaqList } from "@/components/frank/FaqList";
 import { Hero } from "@/components/frank/Hero";
 import { Marquee } from "@/components/frank/Marquee";
 import { MeetFrank } from "@/components/frank/MeetFrank";
-import { Proof } from "@/components/frank/Proof";
+import { Proof, StatsStrip } from "@/components/frank/Proof";
 import { SectionHeading, Section } from "@/components/frank/SectionHeading";
 import { FinalCta, StatementBand } from "@/components/frank/StatementBand";
 import { spherePile } from "@/components/frank/Sphere";
@@ -27,6 +27,8 @@ export function HomePage() {
       <Hero />
       {/* 4.2 */}
       <Marquee className="mt-6 md:mt-10" />
+      {/* Our own numbers, straight under the logos */}
+      <StatsStrip className="mt-10 md:mt-14" />
       {/* 4.3 */}
       <TabbedFeature />
       {/* 4.4 */}
@@ -54,7 +56,8 @@ export function HomePage() {
       {/* 4.8 */}
       <WhoFrankHelps />
       {/* 4.9 */}
-      <Proof />
+      {/* The founder quote (the numbers moved up under the logos) */}
+      <Proof withHeading={false} withStats={false} />
       {/* 4.10 */}
       <ContactBand />
       {/* 4.11, hidden until approved quotes exist */}
