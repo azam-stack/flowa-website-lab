@@ -1,28 +1,34 @@
 /**
- * Site-wide configuration. Anything that differs between environments
- * (booking tool, contact endpoint, analytics) is read from Vite env
- * variables here, in one place, and nowhere else.
+ * Site-wide configuration for the Frank draft. Anything that differs
+ * between environments is read from Vite env variables here, in one
+ * place, and nowhere else.
  *
- * - VITE_BOOKING_URL: the canonical booking flow (a Calendly/HubSpot/
- *   Cal.com link). Every "Book a call" resolves to it. Unset: the lead
- *   form on the current page.
- * - VITE_CONTACT_ENDPOINT: the POST /api/contact endpoint (see backend/).
- *   Unset: the form opens the visitor's email client and says so.
- * - VITE_ANALYTICS_ENDPOINT: where events are beaconed. Unset: events go
- *   to window.dataLayer only (and the console in development).
+ * The draft never reads the live site's variables (VITE_CONTACT_ENDPOINT,
+ * VITE_BOOKING_URL, VITE_ANALYTICS_ENDPOINT): brief §0 forbids touching
+ * the live forms, their endpoints and the production analytics property.
+ *
+ * - VITE_DRAFT_LEAD_ENDPOINT: the draft environment's own POST endpoint
+ *   for contact and quote submissions (a separate deployment of
+ *   backend/). Unset: the forms open the visitor's email client and say so.
+ * - VITE_CLIENT_DASHBOARD_URL: the "Client dashboard" nav link. Unset:
+ *   the link is not rendered at all. [CONFIRM]
+ * - VITE_SITE_URL: the canonical origin of this draft. Defaults to the
+ *   GitHub Pages preview.
+ * - VITE_DRAFT: "false" removes the noindex meta. Default: draft on.
  */
 const env = import.meta.env;
 
 export const SITE_CONFIG = {
-  name: "Flowa",
-  /** Canonical origin for SEO. The GitHub Pages preview still canonicalises to the real domain. */
-  siteUrl: "https://flowa.dk",
+  name: "Frank by FLOWA",
+  company: "FLOWA",
+  siteUrl: ((env.VITE_SITE_URL as string | undefined) || "https://azam-stack.github.io/flowa-website-lab").replace(/\/$/, ""),
   locale: "en_GB",
   lang: "en-GB",
-  bookingUrl: (env.VITE_BOOKING_URL as string | undefined) || null,
-  contactEndpoint: (env.VITE_CONTACT_ENDPOINT as string | undefined) || null,
-  analyticsEndpoint: (env.VITE_ANALYTICS_ENDPOINT as string | undefined) || null,
-  /** The in-page fallback for the booking flow: the lead form's id. */
-  contactAnchor: "#contact",
+  draft: (env.VITE_DRAFT as string | undefined) !== "false",
+  leadEndpoint: (env.VITE_DRAFT_LEAD_ENDPOINT as string | undefined) || null,
+  clientDashboardUrl: (env.VITE_CLIENT_DASHBOARD_URL as string | undefined) || null,
+  /** Draft analytics only: events stay in window.dataLayer. Nothing is beaconed anywhere. */
+  analyticsEndpoint: null as string | null,
+  email: "info@flowa.dk",
   ogImage: "/og-image.png",
 } as const;

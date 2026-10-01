@@ -1,6 +1,6 @@
-# Flowa lead endpoint (Cloudflare Worker)
+# FLOWA lead endpoint (Cloudflare Worker)
 
-The website is static (GitHub Pages), so the form posts to this worker. It validates and sanitises the payload with the same schema the form uses (`src/lib/lead-schema.ts`), rate-limits by IP, drops honeypot hits, de-duplicates identical submissions within ten minutes, stores every lead in KV, forwards it to any configured CRM provider, and sends an internal notification through Resend. Secrets never reach the browser.
+The website is static (GitHub Pages), so the contact form and the pricing quote quiz post to this worker. Two payload kinds share one schema: `contact` and `quote` (see `src/lib/lead-schema.ts`). For the Frank draft, deploy a **separate** worker (its own name and KV namespace) and point the draft at it with `VITE_DRAFT_LEAD_ENDPOINT`; the live site's worker and `VITE_CONTACT_ENDPOINT` are never used by the draft. It validates and sanitises the payload with the same schema the form uses (`src/lib/lead-schema.ts`), rate-limits by IP, drops honeypot hits, de-duplicates identical submissions within ten minutes, stores every lead in KV, forwards it to any configured CRM provider, and sends an internal notification through Resend. Secrets never reach the browser.
 
 ## Deploy
 
@@ -12,7 +12,7 @@ npx wrangler secret put RESEND_API_KEY      # from resend.com, with flowa.dk ver
 npx wrangler deploy                         # prints https://flowa-contact.<account>.workers.dev
 ```
 
-Then set the site's build variable `VITE_CONTACT_ENDPOINT` to `https://flowa-contact.<account>.workers.dev/api/contact` (GitHub: repository → Settings → Secrets and variables → Actions → Variables). Until that variable is set, the form opens the visitor's email client and says so; it never claims a submission was sent.
+Then set the draft's build variable `VITE_DRAFT_LEAD_ENDPOINT` to `https://<draft-worker>.<account>.workers.dev/api/contact` (GitHub: repository → Settings → Secrets and variables → Actions → Variables). Until that variable is set, both forms open the visitor's email client and say so; they never claim a submission was sent.
 
 ## CRM
 

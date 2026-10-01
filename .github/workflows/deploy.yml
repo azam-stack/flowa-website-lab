@@ -1,9 +1,10 @@
-# LAB COPY of the Flowa website. Builds and publishes to GitHub Pages on
-# every push to main, at https://azam-stack.github.io/flowa-website-lab/.
-# One-time setup: Settings → Pages → Build and deployment → Source:
-# "GitHub Actions". Do NOT set a custom domain here: flowa.dk belongs to
-# azam-stack/flowa-website.
-name: Deploy to GitHub Pages
+# LAB COPY. Builds the Frank draft and publishes it to GitHub Pages on
+# every push to main. One-time setup in this repository: Settings → Pages
+# → Build and deployment → Source: "GitHub Actions". The draft then lives
+# at https://azam-stack.github.io/flowa-website-lab/ with noindex on
+# every page. It never touches flowa.dk, its DNS, its forms or its
+# endpoints.
+name: Deploy draft to GitHub Pages
 
 on:
   push:
@@ -31,13 +32,13 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          # LAB COPY: served at azam-stack.github.io/flowa-website-lab/, never at
-          # flowa.dk. There is deliberately no public/CNAME in this repository.
+          # Served under the repository path on GitHub Pages.
           VITE_BASE: /flowa-website-lab/
-          # Lead endpoint (backend/ worker), booking link and analytics sink (see README).
-          VITE_CONTACT_ENDPOINT: ${{ vars.VITE_CONTACT_ENDPOINT }}
-          VITE_BOOKING_URL: ${{ vars.VITE_BOOKING_URL }}
-          VITE_ANALYTICS_ENDPOINT: ${{ vars.VITE_ANALYTICS_ENDPOINT }}
+          VITE_SITE_URL: https://azam-stack.github.io/flowa-website-lab
+          # The draft's own lead endpoint and the client dashboard link (Settings → Variables). Both optional.
+          # The live site's VITE_CONTACT_ENDPOINT, VITE_BOOKING_URL and VITE_ANALYTICS_ENDPOINT are deliberately not read here.
+          VITE_DRAFT_LEAD_ENDPOINT: ${{ vars.VITE_DRAFT_LEAD_ENDPOINT }}
+          VITE_CLIENT_DASHBOARD_URL: ${{ vars.VITE_CLIENT_DASHBOARD_URL }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
